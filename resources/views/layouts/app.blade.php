@@ -12,6 +12,9 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{!! asset('css/cascada.css') !!}" rel="stylesheet" type="text/css">
+      <link href="{!! asset('css/carousel.css') !!}" rel="stylesheet" type="text/css">
+
 
     <!-- Scripts -->
     <script>
@@ -25,7 +28,7 @@
         <nav class="navbar navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
-
+                    <img src="images/rate_03.png" height="65px" alt="Responsive image" >
                     <!-- Collapsed Hamburger -->
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
@@ -33,6 +36,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
+
+
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
