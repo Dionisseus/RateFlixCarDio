@@ -41,7 +41,7 @@
             <!--    <h1>One more for good measure.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
           -->  <p>Una joven soñadora y romántica llamada Bella (Emma Watson) vive en una pequeña aldea junto a su padre,
-           un inventor de artilugios, al que algunos consideran un anciano demente. Un día, su padre viaja a una feria para exponer sus inventos, 
+           un inventor de artilugios, al que algunos consideran un anciano demente. Un día, su padre viaja a una feria para exponer sus inventos,
           pero se pierde en el camino y acaba en un viejo y misterioso castillo.</p>
           <a class="btn btn-lg btn-default" href="#" role="button">Ver Reseña</a></p>
               </div>
