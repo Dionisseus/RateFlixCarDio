@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container" >
       <!-- Carousel
       ================================================== -->
       <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -14,12 +14,13 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <img class="first-slide" src="images/lalaland.jpg" alt="First slide">
+            <img class="first-slide" src="images/hacksaw.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption">
               <!--  <h1>Example headline.</h1>
-                <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-              -->  <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                <p>
+              --> <p>La película cuenta la historia de Desmond Doss, interpretado por Andrew Garfield,
+              un hombre contrario a la violencia que se alista en el ejército estadounidense para servir como médico en la II Guerra Mundial.<p><a class="btn btn-lg btn-default" href="#" role="button">Ver Reseña</a></p>
               </div>
             </div>
           </div>
@@ -28,8 +29,8 @@
             <div class="container">
               <div class="carousel-caption">
             <!--    <h1>Another example headline.</h1>
-            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                -->    <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+            <p>-->   <p>Año 2024. La población mutante se ha visto drásticamente reducida y los X-Men se han visto obligados a separarse. Logan, cuyos poderes de regeneración se han debilitado,
+             ha caído en el alcohol y se encarga de cuidar al anciano y enfermo Profesor X. <p><a class="btn btn-lg btn-default" href="#" role="button">Ver Reseña</a></p>
               </div>
             </div>
           </div>
@@ -39,7 +40,10 @@
               <div class="carousel-caption">
             <!--    <h1>One more for good measure.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                  -->  <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
+          -->  <p>Una joven soñadora y romántica llamada Bella (Emma Watson) vive en una pequeña aldea junto a su padre,
+           un inventor de artilugios, al que algunos consideran un anciano demente. Un día, su padre viaja a una feria para exponer sus inventos, 
+          pero se pierde en el camino y acaba en un viejo y misterioso castillo.</p>
+          <a class="btn btn-lg btn-default" href="#" role="button">Ver Reseña</a></p>
               </div>
             </div>
           </div>

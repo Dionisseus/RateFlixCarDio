@@ -13,7 +13,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{!! asset('css/cascada.css') !!}" rel="stylesheet" type="text/css">
-      <link href="{!! asset('css/carousel.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('css/carousel.css') !!}" rel="stylesheet" type="text/css">
 
 
     <!-- Scripts -->
@@ -25,24 +25,20 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+        <nav  class="navbar navbar-default navbar-collapse">
             <div class="container">
-                <div class="navbar-header">
+                <div class="navbar-header"  id="containerbg">
+                  <a href="">
                     <img src="images/rate_03.png" height="65px" alt="Responsive image" >
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                  </a>
 
 
 
                     <!-- Branding Image -->
+                    <!--
                     <a class="navbar-brand" href="{{ url('/') }}">
                         {{ config('app.name', 'Laravel') }}
-                    </a>
+                    </a> -->
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -51,12 +47,16 @@
                         &nbsp;
                     </ul>
 
+                    <a class="navbar-brand" href="{{ url('/') }}" >
+                        {{ config('app.name', 'Laravel') }}
+                    </a>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Login</a></li>
-                            <li><a href="{{ route('register') }}">Register</a></li>
+                            <li><a href="{{ route('login') }}">Iniciar Sesion</a></li>
+                            <li><a href="{{ route('register') }}">Registrar</a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
