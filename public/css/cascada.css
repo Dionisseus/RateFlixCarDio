@@ -1,3 +1,32 @@
 nav{
   background: black !important;
 }
+
+.sinopsis{
+  opacity: .8;
+  background-color: black;
+    font-family: 'Raleway', sans-serif;
+}
+
+body{
+  background: #f2f2f2;
+}
+
+.top-form{
+  background: black !important;
+  color: orange !important;
+  font-family: 'Raleway', sans-serif;
+}
+
+.tabtab{
+  color: orange !important;
+  font-family: 'Raleway', sans-serif;
+
+}
+
+.tabtab:focus, .tabtab:hover{
+  text-decoration: none !important;
+  box-shadow: none;
+  border-color: transparent;
+  background-color: rgba(0, 119, 204, 0) !important;
+}

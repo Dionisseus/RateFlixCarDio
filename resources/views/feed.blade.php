@@ -19,18 +19,41 @@
               <div class="carousel-caption">
               <!--  <h1>Example headline.</h1>
                 <p>
-              --> <p>La película cuenta la historia de Desmond Doss, interpretado por Andrew Garfield,
-              un hombre contrario a la violencia que se alista en el ejército estadounidense para servir como médico en la II Guerra Mundial.<p><a class="btn btn-lg btn-default" href="#" role="button">Ver Reseña</a></p>
+
+              -->
+              <h1>
+                <strong>Hasta El Último Hombre</strong>
+              </h1>
+              <div class="sinopsis">
+               <p>La película cuenta la historia de Desmond Doss, interpretado por Andrew Garfield,
+              un hombre contrario a la violencia que se alista en el ejército estadounidense para servir como médico en la II Guerra Mundial.
+              <p>
+              </div>
+               @if (Auth::guest())
+               <a class="btn btn-lg btn-default"  href="{{ route('login') }}" role="button">Ver Reseña</a>
+             </p>
+               @else
+
+                           {{ Auth::user()->name }} <span class="caret"></span>
+              @endif
               </div>
             </div>
           </div>
           <div class="item">
-            <img class="second-slide" src="images/logan.png" alt="Second slide">
+            <img class="second-slide" src="images/logan.png" alt="Logan">
             <div class="container">
               <div class="carousel-caption">
             <!--    <h1>Another example headline.</h1>
-            <p>-->   <p>Año 2024. La población mutante se ha visto drásticamente reducida y los X-Men se han visto obligados a separarse. Logan, cuyos poderes de regeneración se han debilitado,
-             ha caído en el alcohol y se encarga de cuidar al anciano y enfermo Profesor X. <p><a class="btn btn-lg btn-default" href="#" role="button">Ver Reseña</a></p>
+            <p>-->
+            <h1>
+            <strong>
+              LOGAN
+            </strong></h1>
+            <div class="sinopsis">
+              <p>Año 2024. La población mutante se ha visto drásticamente reducida y los X-Men se han visto obligados a separarse. Logan, cuyos poderes de regeneración se han debilitado,
+             ha caído en el alcohol y se encarga de cuidar al anciano y enfermo Profesor X. <p>
+             </div>
+               <a class="btn btn-lg btn-default" href="#" role="button">Ver Reseña</a></p>
               </div>
             </div>
           </div>
@@ -40,9 +63,13 @@
               <div class="carousel-caption">
             <!--    <h1>One more for good measure.</h1>
             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-          -->  <p>Una joven soñadora y romántica llamada Bella (Emma Watson) vive en una pequeña aldea junto a su padre,
+          -->
+          <h1>La Bella y la Bestia</h1>
+          <div class="sinopsis">
+          <p>Una joven soñadora y romántica llamada Bella (Emma Watson) vive en una pequeña aldea junto a su padre,
            un inventor de artilugios, al que algunos consideran un anciano demente. Un día, su padre viaja a una feria para exponer sus inventos,
           pero se pierde en el camino y acaba en un viejo y misterioso castillo.</p>
+        </div>
           <a class="btn btn-lg btn-default" href="#" role="button">Ver Reseña</a></p>
               </div>
             </div>

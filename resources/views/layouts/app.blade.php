@@ -8,12 +8,14 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>{{ config('app.name', 'RateFlix') }}</title>
 
     <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{!! asset('css/cascada.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carousel.css') !!}" rel="stylesheet" type="text/css">
+
 
 
     <!-- Scripts -->
@@ -27,8 +29,8 @@
     <div id="app">
         <nav  class="navbar navbar-default navbar-collapse">
             <div class="container">
-                <div class="navbar-header"  id="containerbg">
-                  <a href="">
+                <div class="navbar-header">
+                  <a href="{{ url('/') }}">
                     <img src="images/rate_03.png" height="65px" alt="Responsive image" >
                   </a>
 
@@ -48,15 +50,26 @@
                     </ul>
 
                     <a class="navbar-brand" href="{{ url('/') }}" >
-                        {{ config('app.name', 'Laravel') }}
+                        {{ config('app.name', 'RateFlix') }}
                     </a>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
                         @if (Auth::guest())
-                            <li><a href="{{ route('login') }}">Iniciar Sesion</a></li>
-                            <li><a href="{{ route('register') }}">Registrar</a></li>
+                            <li>
+                              <a class="tabtab" href="{{ route('login') }}">
+                                <strong>
+                              Iniciar Sesion
+                                </strong>
+                              </a>
+                            </li>
+                            <li>
+                              <a class="tabtab" href="{{ route('register') }}">
+                              <strong>
+                                Registrar
+                              </strong>
+                            </a></li>
                         @else
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
