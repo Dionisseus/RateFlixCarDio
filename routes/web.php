@@ -10,9 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
+/*
+Route::get('/welcome', function () {
     return view('welcome');
+});
+Route::get('/feed', function () {
+    return view('feed');
+});*/
+Route::get('/', function () {
+    return view('feed');
 });
 
 Auth::routes();
