@@ -49,7 +49,7 @@
                         &nbsp;
                     </ul>
 
-                    <a class="navbar-brand" href="{{ url('/') }}" >
+                    <a class="navbar-brand text-uppercase"style="font-size:50px; color:#ff6800"  href="{{ url('/') }}" >
                         {{ config('app.name', 'RateFlix') }}
                     </a>
 
