@@ -4,8 +4,8 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading top-form">
+            <div class="panel panel-default" style="margin-top: 10%;">
+                <div class="panel-heading top-form text-uppercase">
                   <strong>
                     Iniciar sesión
                   </strong></div>

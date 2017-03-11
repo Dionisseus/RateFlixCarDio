@@ -58,16 +58,16 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li>
-                              <a class="tabtab" href="{{ route('login') }}">
+                              <a class="tabtab text-uppercase" href="{{ route('login') }}">
                                 <strong>
                               Iniciar Sesion
                                 </strong>
                               </a>
                             </li>
                             <li>
-                              <a class="tabtab" href="{{ route('register') }}">
+                              <a class="tabtab text-uppercase" href="{{ route('register') }}">
                               <strong>
-                                Registrar
+                                Registrarse
                               </strong>
                             </a></li>
                         @else
