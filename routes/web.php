@@ -20,6 +20,9 @@ Route::get('/feed', function () {
 Route::get('/', function () {
     return view('feed');
 });
+Route::get('/register', function () {
+    return view('register');
+});
 
 Auth::routes();
 
