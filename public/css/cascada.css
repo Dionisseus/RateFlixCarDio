@@ -1,16 +1,11 @@
 nav{
   background: black !important;
-  margin: 0 !important;
-  border-color: black !important;
-  border-radius: 0 !important;
-  padding: 1%;
 }
 
 .sinopsis{
   opacity: .8;
   background-color: black;
-  font-family: 'Raleway', sans-serif;
-
+    font-family: 'Raleway', sans-serif;
 }
 
 body{
@@ -34,30 +29,4 @@ body{
   box-shadow: none;
   border-color: transparent;
   background-color: rgba(0, 119, 204, 0) !important;
-}
-
-h1{
-  text-shadow: 2px 2px #777777;
-  margin-left: -25%;
-}
-
-.caro{
-  color: black !important;
-}
-
-.titulo-pos{
-  margin-bottom: -8%;
-  margin-left: -25%;
-  padding: 20px;
-}
-
-#container-land{
-  width: 100% !important;
-  height: 100% !important;
-}
-
-#color{
-  background: red;
-  width: 50px;
-  height: 50px;
 }
