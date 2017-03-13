@@ -20,8 +20,8 @@ Route::get('/feed', function () {
 Route::get('/', function () {
     return view('feed');
 });
-Route::get('/viewTest', function () {
-    return View::make('viewTest');
+Route::get('/summary', function () {
+    return View::make('summaryMovies');
 });
 Route::get('/register', function () {
     return view('register');
@@ -30,6 +30,6 @@ Route::get('/register', function () {
 Auth::routes();
 
 Route::get('/home', function () {
-    return view('viewTest');
+    return view('summaryMovies');
 });
 //Route::get('/home', 'HomeController@index');

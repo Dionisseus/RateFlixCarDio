@@ -52,7 +52,6 @@
             <!--    <h1>Another example headline.</h1>
             <p>-->
             <div class="titulo-pos">
-            <h1>  <a class="btn btn-lg btn-default"  href="{{ url('viewTest') }}" role="button">Ver Reseña</a> 
             <strong>
               RESEÑA: LOGAN
             </strong></h1>
