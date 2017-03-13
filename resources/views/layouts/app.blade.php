@@ -15,6 +15,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{!! asset('css/cascada.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carousel.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('css/carouselNetflixLike.css') !!}" rel="stylesheet" type="text/css">
 
 
 
@@ -49,7 +50,7 @@
                         &nbsp;
                     </ul>
 
-                    <a class="navbar-brand" href="{{ url('/') }}" >
+                    <a class="navbar-brand text-uppercase"style="font-size:50px; color:#ff6800"  href="{{ url('/') }}" >
                         {{ config('app.name', 'RateFlix') }}
                     </a>
 
@@ -58,16 +59,16 @@
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li>
-                              <a class="tabtab" href="{{ route('login') }}">
+                              <a class="tabtab text-uppercase" href="{{ route('login') }}">
                                 <strong>
                               Iniciar Sesion
                                 </strong>
                               </a>
                             </li>
                             <li>
-                              <a class="tabtab" href="{{ route('register') }}">
+                              <a class="tabtab text-uppercase" href="{{ route('register') }}">
                               <strong>
-                                Registrar
+                                Registrarse
                               </strong>
                             </a></li>
                         @else
