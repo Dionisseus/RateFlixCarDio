@@ -29,4 +29,7 @@ Route::get('/register', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+Route::get('/home', function () {
+    return view('viewTest');
+});
+//Route::get('/home', 'HomeController@index');
