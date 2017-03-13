@@ -33,8 +33,8 @@
               <p>
               </div>
               </div>
+            
                @if (Auth::guest())
-            <!--    <a class="btn btn-lg btn-default"  href="{{ route('login') }}" role="button">Ver Reseña</a> -->
              </p>
                @else
 
@@ -52,7 +52,7 @@
             <!--    <h1>Another example headline.</h1>
             <p>-->
             <div class="titulo-pos">
-            <h1>
+            <h1>  <a class="btn btn-lg btn-default"  href="{{ url('viewTest') }}" role="button">Ver Reseña</a> 
             <strong>
               RESEÑA: LOGAN
             </strong></h1>
