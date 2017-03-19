@@ -1,0 +1,15 @@
+.imgpos{
+  margin-top: 5%;
+
+}
+.imgpos img{
+  width: 30%;
+}
+
+.info-movie{
+  float: left;
+  width: 30%;
+  text-align: left;
+  margin-left: 30%;
+  position: relative;
+}

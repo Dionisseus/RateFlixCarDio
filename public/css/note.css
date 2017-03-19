@@ -16,6 +16,7 @@ h1 {
   position: relative;
   filter: drop-shadow(3px 3px 10px rgba(0, 0, 0, 0.8));
   top: 50px;
+  padding: 20px;
 
 }
 .note:before {

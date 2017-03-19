@@ -32,7 +32,9 @@ Route::get('/summary', function () {
 Route::get('/note', function () {
     return view('note');
 });
-
+Route::get('/review', function () {
+    return view('review');
+});
 
 Auth::routes();
 

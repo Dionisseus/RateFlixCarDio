@@ -16,6 +16,7 @@
     <link href="{!! asset('css/cascada.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carousel.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/note.css') !!}" rel="stylesheet" type="text/css">
+      <link href="{!! asset('css/review.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carouselNetflixLike.css') !!}" rel="stylesheet" type="text/css">
 
 
