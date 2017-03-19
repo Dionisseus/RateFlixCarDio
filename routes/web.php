@@ -25,6 +25,8 @@ Route::get('/viewTest', function () {
 });
 Route::get('/register', function () {
     return view('register');
+});Route::get('/summary', function () {
+    return view('summaryMovies');
 });
 
 Auth::routes();
