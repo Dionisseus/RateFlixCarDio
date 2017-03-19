@@ -33,7 +33,7 @@
               <p>
               </div>
               </div>
-            
+
                @if (Auth::guest())
              </p>
                @else
@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="item">
-            <a href="#">
+            <a  href="{{ url('summary') }}">
             <img class="second-slide" src="images/logan.jpg" alt="Logan">
           </a>
             <div class="container">
@@ -52,7 +52,7 @@
             <!--    <h1>Another example headline.</h1>
             <p>-->
             <div class="titulo-pos">
-            <h1>  <a class="btn btn-lg btn-default"  href="{{ url('viewTest') }}" role="button">Ver Reseña</a> 
+            <h1>
             <strong>
               RESEÑA: LOGAN
             </strong></h1>

@@ -25,9 +25,14 @@ Route::get('/viewTest', function () {
 });
 Route::get('/register', function () {
     return view('register');
-});Route::get('/summary', function () {
+});
+Route::get('/summary', function () {
     return view('summaryMovies');
 });
+Route::get('/note', function () {
+    return view('note');
+});
+
 
 Auth::routes();
 
