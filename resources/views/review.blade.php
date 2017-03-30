@@ -6,9 +6,11 @@
     <img src="images/logan.jpg">
   </div>
   <div class="info-movie">
-    <p>
-      Nombre de pelicula: Logan
-    </p>
+    <h3>
+        <strong>
+          Logan
+        </strong>
+    </h3>
   </div>
 </div>
 @endsection

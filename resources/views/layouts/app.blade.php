@@ -56,6 +56,8 @@
                         {{ config('app.name', 'RateFlix') }}
                     </a>
 
+                    <input type="text"></input>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
                         <!-- Authentication Links -->
