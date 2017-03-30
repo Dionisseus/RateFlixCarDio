@@ -38,4 +38,8 @@ Route::get('/review', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
+
+Route::get('/home', function () {
+    return view('summaryMovies');
+});
+//Route::get('/home', 'HomeController@index');

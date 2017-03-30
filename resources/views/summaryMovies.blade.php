@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="contain">
+<h1 style="margin: auto; margin-top: 10px;"><strong>ACTION</strong></h1>
   <div class="row">
     <div class="row__inner">
 
