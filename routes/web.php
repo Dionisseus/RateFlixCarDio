@@ -35,6 +35,10 @@ Route::get('/note', function () {
 Route::get('/review', function () {
     return view('review');
 });
+Route::get('pruebasMovies',function(){
+  $movies = Movies::where('genre','accion')->get();
+    dd(movies);
+});
 
 Auth::routes();
 

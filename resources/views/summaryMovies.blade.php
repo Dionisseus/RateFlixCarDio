@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="contain">
+<div class="contain" style="overflow: hidden">
   <div class="row">
+
     <div class="row__inner">
 
       <div class="tile">
@@ -215,6 +216,15 @@
       </div>
 
     </div>
+    <a class="left carousel-control"  role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+
+    </a>
+
+    <a class="right carousel-control" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+
+    </a>
   </div>
 
 </div>
