@@ -17,11 +17,11 @@ class MoviesController extends Controller
     {
         return Movies::create([
             'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'birth-date' => $data['birth-date'],
-            'genre' => $data['genre'],
-            'avatar' => $data['avatar'],
+            'image' => $data['image'],
+            'genre' => $data['genre']),
+            'actor' => $data['actor'],
+            'sinopsis' => $data['sinopsis'],
+            'duration' => $data['duration'],
         ]);
     }
 }

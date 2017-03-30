@@ -10,22 +10,26 @@
         <div class="tile__media">
           <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-1.jpg" alt=""  />
         </div>
+        <a href="{{ url('/review') }}">
         <div class="tile__details">
           <div class="tile__title">
             Top Gear
           </div>
         </div>
+      </a>
       </div>
 
       <div class="tile">
         <div class="tile__media">
           <img class="tile__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/70390/show-2.jpg" alt=""  />
         </div>
+        <a href="{{ url('/review') }}">
         <div class="tile__details">
           <div class="tile__title">
             Top Gear
           </div>
         </div>
+      </a>
       </div>
 
       <div class="tile">
