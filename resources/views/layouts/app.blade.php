@@ -12,11 +12,13 @@
 
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{!! asset('css/cascada.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carousel.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/note.css') !!}" rel="stylesheet" type="text/css">
-      <link href="{!! asset('css/review.css') !!}" rel="stylesheet" type="text/css">
+      <link href="{!! asset('css/style.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carouselNetflixLike.css') !!}" rel="stylesheet" type="text/css">
 
 
@@ -83,11 +85,21 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
+
+                                      <a href="{{ route('login') }}">
+                                        Profile
+                                      </a>
+
+                                      <form id="profile">
+                                        {{ csrf_field() }}
+                                      </form>
+
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                             Logout
                                         </a>
+
 
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
@@ -106,5 +118,10 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script src="{{ asset('js/netflixcaroussel.js') }}"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 </html>

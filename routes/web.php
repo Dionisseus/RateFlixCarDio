@@ -29,11 +29,15 @@ Route::get('/register', function () {
 Route::get('/summary', function () {
     return view('summaryMovies');
 });
-Route::get('/note', function () {
-    return view('note');
+Route::get('/profile', function () {
+    return view('profile');
 });
 Route::get('/review', function () {
     return view('review');
+});
+Route::get('pruebasMovies',function(){
+  $movies = Movies::where('genre','accion')->get();
+    dd(movies);
 });
 
 Auth::routes();

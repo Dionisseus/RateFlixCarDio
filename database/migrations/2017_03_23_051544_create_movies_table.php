@@ -19,8 +19,9 @@ class CreateMoviesTable extends Migration
             $table->string('name');
             $table->longtext('image');
             $table->string('genre');
-            $table->string('actor');
+            $table->longtext('actor');
             $table->longtext('sinopsis');
+            $table->integer('duration');
             $table->timestamps();
         });
     }
