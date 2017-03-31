@@ -58,7 +58,6 @@
                         {{ config('app.name', 'RateFlix') }}
                     </a>
 
-                    <input type="text"></input>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -86,7 +85,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
 
-                                      <a href="{{ route('login') }}">
+                                      <a href="{{ url('/profile') }}">
                                         Profile
                                       </a>
 

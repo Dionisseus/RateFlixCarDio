@@ -22,6 +22,7 @@ class MoviesController extends Controller
             'actor' => $data['actor'],
             'sinopsis' => $data['sinopsis'],
             'duration' => $data['duration'],
+            'rate' => $data['rate'],
         ]);
     }
 }

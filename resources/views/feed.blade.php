@@ -14,7 +14,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <a href="{{ url('/login') }}">
+            <a href="{{ url('/summary') }}">
             <img class="first-slide" src="images/hacksaw.jpg" alt="First slide" >
           </a>
             <div class="container">
@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="item">
-            <a  href="{{ url('/login') }}">
+            <a  href="{{ url('/summary') }}">
             <img class="second-slide" src="images/logan.jpg" alt="Logan">
           </a>
             <div class="container">
@@ -66,7 +66,7 @@
             </div>
           </div>
           <div class="item">
-            <a href="{{ url('/login') }}">
+            <a href="{{ url('/summary') }}">
             <img class="third-slide" src="images/bandb.jpeg" alt="Third slide">
           </a>
             <div class="container">
