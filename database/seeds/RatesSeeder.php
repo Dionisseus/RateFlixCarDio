@@ -15,14 +15,14 @@ class RatesSeeder extends Seeder
         DB::table('rates')->insert([
             'idUser' => '1',
             'idMovie' => '1',
-            'thumbsUp' => '20',
+            'thumbsUp' => '85',
 
         ]);
 
         DB::table('rates')->insert([
             'idUser' => '2',
             'idMovie' => '2',
-            'thumbsUp' => '60',
+            'thumbsUp' => '92',
 
         ]);
 

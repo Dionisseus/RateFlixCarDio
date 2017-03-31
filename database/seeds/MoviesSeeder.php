@@ -23,13 +23,13 @@ class MoviesSeeder extends Seeder
         ]);
 
         DB::table('movies')->insert([
-            'name' => 'Interestellar',
+            'name' => 'Batman: The Dark Knight',
             'image' => 'imagen',
             'genre' => 'Ciencia-Ficcion',
-            'actor' => 'Matthew McConaughey Anne Hathaway Jessica Chastain Bill Irwin Ellen Burstyn Michael Caine',
+            'actor' => 'Christian Bale Heath Ledger Morgan Freeman Michael Caine',
             'sinopsis' => 'text',
-            'duration' => '160',
-            'rate' => '85',
+            'duration' => '180',
+            'rate' => '92',
         ]);
     }
 }

@@ -38,6 +38,9 @@ Route::get('/review', function () {
 Route::get('/review-logan', function () {
     return view('review-logan');
 });
+Route::get('/review-bat', function () {
+    return view('review-batman');
+});
 Route::get('pruebasMovies',function(){
   $movies = Movies::where('genre','accion')->get();
     dd(movies);
