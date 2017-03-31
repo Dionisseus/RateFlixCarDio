@@ -3,7 +3,7 @@
 <!DOCTYPE>
 <html>
     <head>
-        <title>Reseña | Interestelar</title>
+        <title>Reseña | Batman: The Dark Knight</title>
         <meta charset="UTF-8">
     </head>
     <body style="background:rgb(40,40,40) url('../images/batman.jpg') no-repeat center !important;   background-size:100% auto !important;
@@ -11,7 +11,7 @@
       margin:0 !important;
       background-blend-mode:multiply !important;">
         <article id="movieReview">
-            <h1>Interestelar</h1>
+            <h1>BATMAN: THE DARK KNIGHT</h1>
             <section class="block">
                 <h4>Director</h4>
                 <span class="name">Christopher Nolan</span>
