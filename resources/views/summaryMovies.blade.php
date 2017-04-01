@@ -4,7 +4,7 @@
 
 <div class="contain" style="overflow: hidden">
 
-<h1 style="margin: auto; margin-top: 10px;"><strong>ACTION</strong></h1>
+<h1 style="margin: auto; margin-top: 10px;"></h1>
   <div class="row">
 
     <div class="row__inner">
