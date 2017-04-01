@@ -241,6 +241,7 @@
       </div>
     </div>
   </div>
+  </div>
     <a class="left carousel-control"  role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
 
@@ -251,6 +252,7 @@
 
     </a>
   </div>
-
+</div>
+</div>
 </div>
 @endsection
