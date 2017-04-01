@@ -26,8 +26,28 @@ Route::get('/summary', function () {
 Route::get('/register', function () {
     return view('register');
 });
+Route::get('/summary', function () {
+    return view('summaryMovies');
+});
+Route::get('/profile', function () {
+    return view('profile');
+});
+Route::get('/review', function () {
+    return view('review');
+});
+Route::get('/review-logan', function () {
+    return view('review-logan');
+});
+Route::get('/review-bat', function () {
+    return view('review-batman');
+});
+Route::get('pruebasMovies',function(){
+  $movies = Movies::where('genre','accion')->get();
+    dd(movies);
+});
 
 Auth::routes();
+
 
 Route::get('/home', function () {
     return view('summaryMovies');

@@ -41,6 +41,8 @@
                             </div>
                         </div>
 
+
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Contraseña</label>
 
@@ -60,6 +62,36 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="birth-date" class="col-md-4 control-label">Fecha de nacimiento</label>
+
+                            <div class="col-md-6">
+                                <input id="birth-date" type="date" class="form-control" name="birth-date" required>
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="genre" class="col-md-4 control-label">Género</label>
+
+                            <div class="col-md-6">
+                                <input id="genre" type="text" class="form-control" name="genre" required>
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="avatar" class="col-md-4 control-label">Avatar</label>
+
+                            <div class="col-md-6">
+                                <input id="avatar" type="text" class="form-control" name="avatar" required>
+
+
                             </div>
                         </div>
 

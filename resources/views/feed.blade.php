@@ -14,7 +14,7 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="item active">
-            <a href="#">
+            <a href="{{ url('/summary') }}">
             <img class="first-slide" src="images/hacksaw.jpg" alt="First slide" >
           </a>
             <div class="container">
@@ -33,7 +33,7 @@
               <p>
               </div>
               </div>
-            
+
                @if (Auth::guest())
              </p>
                @else
@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="item">
-            <a href="#">
+            <a  href="{{ url('/summary') }}">
             <img class="second-slide" src="images/logan.jpg" alt="Logan">
           </a>
             <div class="container">
@@ -52,6 +52,7 @@
             <!--    <h1>Another example headline.</h1>
             <p>-->
             <div class="titulo-pos">
+
             <strong>
               RESEÑA: LOGAN
             </strong></h1>
@@ -65,7 +66,7 @@
             </div>
           </div>
           <div class="item">
-            <a href="#">
+            <a href="{{ url('/summary') }}">
             <img class="third-slide" src="images/bandb.jpeg" alt="Third slide">
           </a>
             <div class="container">
