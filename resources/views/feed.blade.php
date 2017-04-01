@@ -52,7 +52,7 @@
             <!--    <h1>Another example headline.</h1>
             <p>-->
             <div class="titulo-pos">
-            <h1>
+
             <strong>
               RESEÑA: LOGAN
             </strong></h1>
