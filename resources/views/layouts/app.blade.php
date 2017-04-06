@@ -17,7 +17,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{!! asset('css/cascada.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carousel.css') !!}" rel="stylesheet" type="text/css">
-    <link href="{!! asset('css/note.css') !!}" rel="stylesheet" type="text/css">
+
+      <link href="{!! asset('css/profile.css') !!}" rel="stylesheet" type="text/css">
       <link href="{!! asset('css/style.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carouselNetflixLike.css') !!}" rel="stylesheet" type="text/css">
 
@@ -58,7 +59,7 @@
                         {{ config('app.name', 'RateFlix') }}
                     </a>
 
-                
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
