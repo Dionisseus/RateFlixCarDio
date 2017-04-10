@@ -34,12 +34,7 @@
               </div>
               </div>
 
-               @if (Auth::guest())
-             </p>
-               @else
-
-                           {{ Auth::user()->name }} <span class="caret"></span>
-              @endif
+          
               </div>
             </div>
           </div>

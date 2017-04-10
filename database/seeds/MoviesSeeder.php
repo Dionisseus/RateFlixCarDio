@@ -19,7 +19,7 @@ class MoviesSeeder extends Seeder
             'actor' => 'Matthew McConaughey Anne Hathaway Jessica Chastain Bill Irwin Ellen Burstyn Michael Caine',
             'sinopsis' => 'text',
             'duration' => '160',
-            'rate' => '85',
+        
         ]);
 
         DB::table('movies')->insert([
@@ -29,7 +29,7 @@ class MoviesSeeder extends Seeder
             'actor' => 'Christian Bale Heath Ledger Morgan Freeman Michael Caine',
             'sinopsis' => 'text',
             'duration' => '180',
-            'rate' => '92',
+
         ]);
     }
 }

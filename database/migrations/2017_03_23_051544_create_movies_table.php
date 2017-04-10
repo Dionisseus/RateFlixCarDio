@@ -22,7 +22,6 @@ class CreateMoviesTable extends Migration
             $table->longtext('actor');
             $table->longtext('sinopsis');
             $table->integer('duration');
-            $table->integer('rate');
             $table->timestamps();
         });
     }

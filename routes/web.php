@@ -45,6 +45,13 @@ Route::get('pruebasMovies',function(){
   $movies = Movies::where('genre','accion')->get();
     dd(movies);
 });
+Route::get('/insertMovie', function () {
+    return view('insertMovie');
+});
+Route::get('insertMovie','MoviesController@index');
+Route::post('store','MoviesController@store');
+
+
 
 Auth::routes();
 
