@@ -77,6 +77,8 @@ class MoviesController extends Controller
     public function show($id)
     {
         //
+        $user = file::all();
+        return view('show', compact('user'));
     }
 
     /**

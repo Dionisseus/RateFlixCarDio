@@ -10,6 +10,12 @@
       padding:0 !important;
       margin:0 !important;
       background-blend-mode:multiply !important;">
+        @foreach ($user as $users)
+
+              <img src="{{user->image}}">
+        @endforeach
+
+
         <article id="movieReview">
             <h1>Interestelar</h1>
             <section class="block">
