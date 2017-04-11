@@ -94,7 +94,11 @@
                     y viajan a través del mismo, encontrándose en otra dimensión. Un mundo
                     desconocido se abre ante ellos y deberán luchar por mantenerse unidos si
                     quieren volver de una pieza. -->
-                  <?php $users = DB::table('movies')->where('name', 'HIMYM')->get(); ?>
+
+                    {{ $data->sinopsis }}
+
+
+
 
                   </span>
                 <h4>Sugerencias</h4>

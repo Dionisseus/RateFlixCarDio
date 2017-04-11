@@ -35,7 +35,7 @@ Route::get('/profile', function () {
 Route::get('/review', function () {
     return view('review');
 });
-
+Route::get('review','MoviesController@getData');
 Route::get('/review-logan', function () {
     return view('review-logan');
 });
@@ -49,6 +49,9 @@ Route::get('pruebasMovies',function(){
 Route::get('/insertMovie', function () {
     return view('insertMovie');
 });
+
+Route::get('summary','SummaryMoviesController@index');
+Route::get('summary','SummaryMoviesController@getData');
 Route::get('insertMovie','MoviesController@index');
 Route::post('store','MoviesController@store');
 

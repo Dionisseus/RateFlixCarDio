@@ -1,12 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
 use App\Movies;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Http\Request;
 use DB;
-class MoviesController extends Controller
+class SummaryMoviesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,10 +14,8 @@ class MoviesController extends Controller
     public function index()
     {
         //
-      //  $users = DB::table('movies')->first();
-      //  return View::('insertMovie',['movies'=>$users->sinopsis]);
 
-      $this->getData();
+        $this->getData();
     }
 
     /**
@@ -30,28 +26,18 @@ class MoviesController extends Controller
     public function create()
     {
         //
-        return Movies::create([
-            'name' => $data['name'],
-            'image' => $data['image'],
-            'genre' => $data['genre'],
-            'actor' => $data['actor'],
-            'sinopsis' => $data['sinopsis'],
-            'duration' => $data['duration'],
-
-        ]);
     }
 
-    public function getData()
-    {
-      $data['data'] = DB::table('movies')->first();
+    public function getData(){
+      $data['data'] = DB::table('movies')->take(30)->get();
 
       if(count($data) > 0 )
       {
-        return view('review'  , $data);
+        return view('summaryMovies' , $data);
 
       }
       else{
-        return view('review');
+        return view('summaryMovies');
       }
     }
     /**
@@ -63,26 +49,6 @@ class MoviesController extends Controller
     public function store(Request $request)
     {
         //
-        $user = new movies;
-
-
-        $user->name = $request['name'];
-
-      if(isset($request->image))
-      {
-        $file = Input::file('image');
-      //  $user->image = $request['image'];
-        $file->move('imagenes', $file->getClientOriginalName());
-        //$user->image->storeAs('public/images','filename.jpg');
-        $user->image = $file->getClientOriginalName();
-      }
-      $user->genre = $request['genre'];
-      $user->actor = $request['actor'];
-      $user->sinopsis = $request['sinopsis'];
-      $user->duration = $request['duration'];
-
-        $user->save();
-        return 'data saved';
     }
 
     /**
@@ -91,7 +57,7 @@ class MoviesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show($id)
     {
         //
     }
