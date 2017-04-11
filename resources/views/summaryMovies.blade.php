@@ -19,7 +19,7 @@
 
           <img class="tile__img" src= "{{ $value->image }}" alt="" width="150px" height="150px" />
         </div>
-        <a href="{{ url('/review') }}">
+        <a href="{{ url('/review?id=') }}{{$value->id }}">
         <div class="tile__details">
           <div class="tile__title">
         {{ $value->name }}

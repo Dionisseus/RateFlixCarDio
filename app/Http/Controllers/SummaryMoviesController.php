@@ -15,7 +15,7 @@ class SummaryMoviesController extends Controller
     {
         //
 
-        $this->getData();
+        //$this->getData();
     }
 
     /**

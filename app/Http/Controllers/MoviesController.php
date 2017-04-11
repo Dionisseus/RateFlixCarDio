@@ -19,7 +19,7 @@ class MoviesController extends Controller
       //  $users = DB::table('movies')->first();
       //  return View::('insertMovie',['movies'=>$users->sinopsis]);
 
-      $this->getData();
+     $this->getData($_GET['id']);
     }
 
     /**
@@ -41,13 +41,13 @@ class MoviesController extends Controller
         ]);
     }
 
-    public function getData()
+    public function getData($id)
     {
-      $data['data'] = DB::table('movies')->first();
+      $data['data'] = DB::table('movies')->where('id',$id);
 
       if(count($data) > 0 )
       {
-        return view('review'  , $data);
+        return view('review', $data);
 
       }
       else{
@@ -74,7 +74,7 @@ class MoviesController extends Controller
       //  $user->image = $request['image'];
         $file->move('imagenes', $file->getClientOriginalName());
         //$user->image->storeAs('public/images','filename.jpg');
-        $user->image = $file->getClientOriginalName();
+        $user->image ='imagenes/'.$file->getClientOriginalName();
       }
       $user->genre = $request['genre'];
       $user->actor = $request['actor'];
