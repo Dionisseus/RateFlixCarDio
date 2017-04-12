@@ -35,6 +35,7 @@ a:hover {
 .row {
   overflow: scroll;
   width: 100%;
+  margin-left: 0px !important;
 }
 
 .row__inner {
@@ -119,7 +120,7 @@ a:hover {
 }
 
 .row__inner:hover {
-  transform: translate3d(-62.5px, 0, 0);
+  /*transform: translate3d(-62.5px, 0, 0);*/
 }
 
 .row__inner:hover .tile {

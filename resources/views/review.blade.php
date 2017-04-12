@@ -5,8 +5,10 @@
     <head>
         <title>Reseña | Interestelar</title>
         <meta charset="UTF-8">
+
+            <!-- CSRF Token -->
     </head>
-    <body style="background:rgb(40,40,40) url('../images/banner.jpg') no-repeat center !important;   background-size:100% auto !important;
+    <body style="background:rgb(40,40,40) url('{{ $value->image }}') no-repeat center !important;   background-size:100% auto !important;
       padding:0 !important;
       margin:0 !important;
       background-blend-mode:multiply !important;">

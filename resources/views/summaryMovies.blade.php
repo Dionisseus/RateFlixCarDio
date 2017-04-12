@@ -6,12 +6,12 @@
 
 <h1 style="margin: auto; margin-top: 10px;"></h1>
   <div class="row">
-
+    <h4>
+      RESEÑAS QUE TE PODRÍAN INTERESAR
+    </h4>
     <div class="row__inner">
 
-      <h4>
-        RESEÑAS QUE TE PODRÍAN INTERESAR
-      </h4>
+
     @foreach ($data as $value)
 
       <div class="tile">

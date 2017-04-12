@@ -20,24 +20,20 @@ Route::get('/feed', function () {
 Route::get('/', function () {
     return view('feed');
 });
-Route::get('/summary', function () {
-    return View::make('summaryMovies');
-});
 Route::get('/register', function () {
     return view('register');
 });
 Route::get('/summary', function () {
     return view('summaryMovies');
 });
+Route::get('summary','SummaryMoviesController@getData');
 Route::get('/profile', function () {
     return view('profile');
 });
 Route::get('/review', function () {
     return view('review');
 });
-
 Route::get('review','MoviesController@index');
-
 Route::get('/review-logan', function () {
     return view('review-logan');
 });
@@ -51,16 +47,8 @@ Route::get('pruebasMovies',function(){
 Route::get('/insertMovie', function () {
     return view('insertMovie');
 });
-
-Route::get('summary','SummaryMoviesController@getData');
-
 Route::post('store','MoviesController@store');
-
-
-
 Auth::routes();
-
-
 Route::get('/home', function () {
     return view('summaryMovies');
 });
