@@ -8,7 +8,7 @@
 
             <!-- CSRF Token -->
     </head>
-    <body style="background:rgb(40,40,40) url('{{ $value->image }}') no-repeat center !important;   background-size:100% auto !important;
+    <body style="background:rgb(40,40,40) url('../images/banner.jpg') no-repeat center !important;   background-size:100% auto !important;
       padding:0 !important;
       margin:0 !important;
       background-blend-mode:multiply !important;">
@@ -17,19 +17,27 @@
         <article id="movieReview">
             <h1>Interestelar</h1>
             <section class="block">
-                <h4>Director</h4>
-                <span class="name">Christopher Nolan</span>
+              <!--  <h4>Director</h4>
+                @foreach ($data as $value)
+                <span class="name">{{ $value->actor }}</span>
+                @endforeach-->
                 <h4>Elenco</h4>
-                <span class="name">Matthew McConaughey</span>
-                <span class="name">Anne Hathaway</span>
+                @foreach ($data as $value)
+                <span class="name">{{ $value->actor }}</span>
+                @endforeach
+              <!--  <span class="name">Anne Hathaway</span>
                 <span class="name">Jessica Chastain</span>
                 <span class="name">Bill Irwin</span>
                 <span class="name">Ellen Burstyn</span>
-                <span class="name">Michael Caine</span>
+                <span class="name">Michael Caine</span> -->
                 <h4>Generos</h4>
-                <span class="name">Ciencia ficción</span>
+                @foreach ($data as $value)
+                <span class="name">{{$value->genre}}</span>
+                @endforeach
+
                 <h4>Calificacion</h4>
                 <span class="score">85</span>
+
             </section>
             <section class="block">
                 <h4>Reseñas de los miembros</h4>
@@ -89,14 +97,17 @@
             </section>
             <section class="block">
                 <h4>Sinopsis</h4>
+                @foreach ($data as $value)
+
                 <span class="argument">
 
-                    {{ $data->sinopsis }}
+                    {{ $value->sinopsis }}
 
 
 
 
                   </span>
+                  @endforeach
                 <h4>Sugerencias</h4>
                 <div class="suggest" name="2001 A Space Odyssey" data_src="images/2001ASpaceOdysseyMovie.jpg"></div>
                 <div class="suggest" name="the martian" data_src="images/theMartian.jpg"></div>

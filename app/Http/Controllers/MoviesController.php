@@ -19,7 +19,7 @@ class MoviesController extends Controller
       //  $users = DB::table('movies')->first();
       //  return View::('insertMovie',['movies'=>$users->sinopsis]);
 
-     $this->getData($_GET['id']);
+     //$this->getData();
     }
 
     /**
@@ -41,9 +41,9 @@ class MoviesController extends Controller
         ]);
     }
 
-    public function getData($id)
+    public function getData(Request $request)
     {
-      $data['data'] = DB::table('movies')->where('id',$id);
+      $data['data'] = DB::table('movies')->where('id', $request['title_id'])->get();
 
       if(count($data) > 0 )
       {

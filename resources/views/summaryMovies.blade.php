@@ -1,8 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-
 <div class="contain" style="overflow: hidden">
+
+  <script>
+    window.onload = function() {
+        $(".tile").on("click",function() {
+            $(".tileId").val(this.id);
+            $("form").submit();
+        });
+    };
+  </script>
+
+  <form method="POST" action="getData" enctype="multipart/form-data">
+    <input type='hidden' class='tileId' name="title_id" value="">
+      {{ csrf_field() }}
+  </form>
 
 <h1 style="margin: auto; margin-top: 10px;"></h1>
   <div class="row">
@@ -14,18 +27,19 @@
 
     @foreach ($data as $value)
 
-      <div class="tile">
+      <div id="{{ $value->id }}" class="tile">
         <div class="tile__media">
 
           <img class="tile__img" src= "{{ $value->image }}" alt="" width="150px" height="150px" />
         </div>
-        <a href="{{ url('/review?id=') }}{{$value->id }}">
+        <!-- <a href="{{ url('/review?id=') }}{{$value->id }}"> -->
+
         <div class="tile__details">
           <div class="tile__title">
         {{ $value->name }}
           </div>
         </div>
-      </a>
+
        </div>
        @endforeach
 

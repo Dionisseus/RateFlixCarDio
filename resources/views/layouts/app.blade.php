@@ -58,7 +58,7 @@
                         {{ config('app.name', 'RateFlix') }}
                     </a>
 
-                
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
@@ -86,7 +86,7 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
 
-                                      <a href="{{ url('/profile') }}">
+                                      <a href="{{ url('/insertMovie') }}">
                                         Profile
                                       </a>
 

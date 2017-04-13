@@ -27,19 +27,15 @@ Route::get('/summary', function () {
     return view('summaryMovies');
 });
 Route::get('summary','SummaryMoviesController@getData');
+Route::post('getData', 'MoviesController@getData');
 Route::get('/profile', function () {
     return view('profile');
 });
-Route::get('/review', function () {
+Route::post('/review', function () {
     return view('review');
 });
-Route::get('review','MoviesController@index');
-Route::get('/review-logan', function () {
-    return view('review-logan');
-});
-Route::get('/review-bat', function () {
-    return view('review-batman');
-});
+Route::post('review','MoviesController@index');
+Route::post('review','MoviesController@getData');
 Route::get('pruebasMovies',function(){
   $movies = Movies::where('genre','accion')->get();
     dd(movies);
