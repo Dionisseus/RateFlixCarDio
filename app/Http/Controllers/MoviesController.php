@@ -43,8 +43,8 @@ class MoviesController extends Controller
 
     public function getData(Request $request)
     {
-      $data['data'] = DB::table('movies')->where('id', $request['title_id'])->get();
-
+      $data['data'] = DB::table('movies','rates')->where('id', $request['title_id'])->get();
+      //$data['data'] = DB::select('select * from movies, rates where id = '$request['title_id']', [1]')->get();
       if(count($data) > 0 )
       {
         return view('review', $data);
