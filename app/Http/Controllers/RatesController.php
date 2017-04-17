@@ -8,7 +8,7 @@ class RatesController extends Controller
 {
     //
     return Rates::create([
-        'id' => $data['id'],
+        'idRate' => $data['idRate'],
         'idUser' => $data['idUser'],
         'idMovie' => $data['idMovie'],
         'thumbsUp' => $data['thumbsUp']),

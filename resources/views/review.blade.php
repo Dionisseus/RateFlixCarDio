@@ -8,17 +8,14 @@
 
             <!-- CSRF Token -->
     </head>
-
-    <body style="background:rgb(40,40,40) url(<?= $data[0]->image ?>) no-repeat center !important;   background-size:100% auto !important;
+    <body style="background:rgb(40,40,40) url('../images/banner.jpg') no-repeat center !important;   background-size:100% auto !important;
       padding:0 !important;
       margin:0 !important;
       background-blend-mode:multiply !important;">
 
 
         <article id="movieReview">
-          @foreach ($data as $value)
-            <h1>{{$value->name}}</h1>
-            @endforeach
+            <h1>Interestelar</h1>
             <section class="block">
               <!--  <h4>Director</h4>
                 @foreach ($data as $value)
@@ -39,9 +36,8 @@
                 @endforeach
 
                 <h4>Calificacion</h4>
-                @foreach ($data as $value)
                 <span class="score">85</span>
-                @endforeach
+
             </section>
             <section class="block">
                 <h4>Reseñas de los miembros</h4>
@@ -104,7 +100,12 @@
                 @foreach ($data as $value)
 
                 <span class="argument">
+
                     {{ $value->sinopsis }}
+
+
+
+
                   </span>
                   @endforeach
                 <h4>Sugerencias</h4>

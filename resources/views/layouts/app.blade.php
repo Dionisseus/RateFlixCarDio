@@ -18,8 +18,7 @@
     <link href="{!! asset('css/cascada.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carousel.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/note.css') !!}" rel="stylesheet" type="text/css">
-    <link href="{!! asset('css/style.css') !!}" rel="stylesheet" type="text/css">
-    <link href="{!! asset('css/styles.css') !!}" rel="stylesheet" type="text/css">
+      <link href="{!! asset('css/style.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carouselNetflixLike.css') !!}" rel="stylesheet" type="text/css">
 
 
@@ -88,10 +87,6 @@
                                     <li>
 
                                       <a href="{{ url('/insertMovie') }}">
-                                        Insert Movie
-                                      </a>
-
-                                      <a href="{{ url('/profile') }}">
                                         Profile
                                       </a>
 
@@ -125,7 +120,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="{{scripts.js}}"></script>
+
         <script src="{{ asset('js/netflixcaroussel.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
 </body>
