@@ -7,7 +7,7 @@
     window.onload = function() {
         $(".tile").on("click",function() {
             $(".tileId").val(this.id);
-            $(".tileId").val(this.genre);
+            $(".genreId").val(this.title);
             $("form").submit();
         });
     };
@@ -15,7 +15,7 @@
 
   <form method="POST" action="reviews" enctype="multipart/form-data">
     <input type='hidden' class='tileId' name="title_id" value="">
-     <input type='hidden' class='genre' name="genre_val" value="">
+     <input type='hidden' type="text" class='genreId' name="genre_val" value="">
       {{ csrf_field() }}
   </form>
 
@@ -29,7 +29,7 @@
 
     @foreach ($data as $value)
 
-      <div id="{{ $value->id }}" class="tile">
+      <div id="{{ $value->id }}" title="{{$value->genre}}" class="tile">
         <div class="tile__media">
 
           <img class="tile__img" src= "{{ $value->image }}" alt="" width="150px" height="150px" />
