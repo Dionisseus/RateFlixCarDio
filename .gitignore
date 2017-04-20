@@ -11,3 +11,4 @@ Homestead.yaml
 config/database.php
 *.png
 public/imagenes/Ochse_Revolver-Poster.jpg
+config/database.php
