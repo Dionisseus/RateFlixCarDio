@@ -39,7 +39,7 @@ background-blend-mode:multiply !important;">
                 @endforeach
 
                 <h4>Calificacion</h4>
-                <span class="score">85</span>
+                <span class="score">{{$likes}}</span>
 
             </section>
             <section class="block">

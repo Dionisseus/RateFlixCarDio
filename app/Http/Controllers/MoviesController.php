@@ -39,7 +39,7 @@ class MoviesController extends Controller
             'sinopsis' => $data['sinopsis'],
             'duration' => $data['duration'],
 
-        ]);
+            ]);
     }
 
     public function getData(Request $request)
@@ -47,17 +47,26 @@ class MoviesController extends Controller
       $data['data'] = DB::table('movies')->where('id', $request['title_id'])->get();
       $data['dataRate'] = DB::table('rates')->where('idMovie', $request['title_id'])->get();
       $data['dataRelated'] = DB::table('movies')->where('genre', $request['genre_val'])->take(2)->get();
+      $dataRelated =$data['dataRate'];
+      $likes =0;
+      foreach ($dataRelated as $p) {
+        if($p->thumbsUp ===1){
+           $likes++;
+       }
+   }
+      $likes =($likes/sizeof($dataRelated) )*100;
 
-      if(count($data) > 0 )
-      {
-        return view('review',$data);
+
+   if(count($data) > 0 )
+   {
+    return view('review',$data)->with('likes',$likes);
        // return view('review', $data,$dataRate);
 
-      }
-      else{
-        return view('review');
-      }
-    }
+}
+else{
+    return view('review');
+}
+}
 
 
 
@@ -74,34 +83,34 @@ class MoviesController extends Controller
     {
         $user = new movies;
         $user->name = $request['name'];
-      if(isset($request->image))
-      {
-        $file = Input::file('image');
+        if(isset($request->image))
+        {
+            $file = Input::file('image');
       //  $user->image = $request['image'];
-        $file->move('imagenes', $file->getClientOriginalName());
+            $file->move('imagenes', $file->getClientOriginalName());
         //$user->image->storeAs('public/images','filename.jpg');
-        $user->image ='imagenes/'.$file->getClientOriginalName();
-      }
-      $user->genre = $request['genre'];
-      $user->actor = $request['actor'];
-      $user->sinopsis = $request['sinopsis'];
-      $user->duration = $request['duration'];
+            $user->image ='imagenes/'.$file->getClientOriginalName();
+        }
+        $user->genre = $request['genre'];
+        $user->actor = $request['actor'];
+        $user->sinopsis = $request['sinopsis'];
+        $user->duration = $request['duration'];
 
         $user->save();
-       return redirect('summary');
+        return redirect('summary');
     }
 
     public function getDataRate(Request $request)
-{
-    $review = new rates;
-    $review->idUser = $request['idUser'];
-    $review->idMovie = $request['idMovie'];
-    $review->thumbsUp = $request['thumbsUp'];
-    $review->review = $request['reviewText'];
+    {
+        $review = new rates;
+        $review->idUser = $request['idUser'];
+        $review->idMovie = $request['idMovie'];
+        $review->thumbsUp = $request['thumbsUp'];
+        $review->review = $request['reviewText'];
 
-    $review->save();
-    return redirect('summary');
-}
+        $review->save();
+        return redirect('summary');
+    }
 
     /**
      * Display the specified resource.
