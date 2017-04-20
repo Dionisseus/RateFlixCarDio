@@ -20,35 +20,32 @@ Route::get('/feed', function () {
 Route::get('/', function () {
     return view('feed');
 });
-Route::get('/summary', function () {
-    return View::make('summaryMovies');
-});
 Route::get('/register', function () {
     return view('register');
 });
 Route::get('/summary', function () {
     return view('summaryMovies');
 });
+Route::get('summary','SummaryMoviesController@getData');
+Route::post('reviews', 'MoviesController@getData');
+Route::post('reviewsRate', 'MoviesController@getDataRate');
 Route::get('/profile', function () {
     return view('profile');
 });
-Route::get('/review', function () {
+Route::post('/review', function () {
     return view('review');
 });
-Route::get('/review-logan', function () {
-    return view('review-logan');
-});
-Route::get('/review-bat', function () {
-    return view('review-batman');
-});
+Route::post('review','MoviesController@index');
+Route::post('review','MoviesController@getData');
 Route::get('pruebasMovies',function(){
   $movies = Movies::where('genre','accion')->get();
     dd(movies);
 });
-
+Route::get('/insertMovie', function () {
+    return view('insertMovie');
+});
+Route::post('store','MoviesController@store');
 Auth::routes();
-
-
 Route::get('/home', function () {
     return view('summaryMovies');
 });

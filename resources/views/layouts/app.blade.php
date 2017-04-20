@@ -87,8 +87,8 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
 
-                                      <a href="{{ url('/profile') }}">
-                                        Profile
+                                      <a href="{{ url('/insertMovie') }}">
+                                        Add Movie
                                       </a>
 
                                       <form id="profile">

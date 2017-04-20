@@ -10,6 +10,6 @@ class Rates extends Model
       protected $table ='rates';
 
       protected $fillable = [
-        'idUser','idMovie','thumbsUp',
+        'idUser','idMovie','thumbsUp','review',
       ];
 }
