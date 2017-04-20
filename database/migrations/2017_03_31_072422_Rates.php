@@ -19,6 +19,7 @@ class Rates extends Migration
           $table->integer('idUser');
           $table->integer('idMovie');
           $table->integer('thumbsUp');
+          $table->longtext('review');
           $table->timestamps();
       });
     }
