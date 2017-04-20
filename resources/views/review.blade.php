@@ -89,7 +89,9 @@ background-blend-mode:multiply !important;">
     @endforeach
     <h4>Sugerencias</h4>
     @foreach ($dataRelated as $value)
-    <div class="suggest" name="{{$value->name}}" data_src="{{$value->image}}"></div>
+    <div class="suggest" name="{{$value->name}}" >
+        <img class="imagenDiv" src="{{$value->image}}" alt="{{$value->name}}"/>
+    </div>
     @endforeach
 </section>
 </article>
