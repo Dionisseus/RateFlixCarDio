@@ -51,14 +51,16 @@ class MoviesController extends Controller
       $likes =0;
       foreach ($dataRelated as $p) {
         if($p->thumbsUp ===1){
-           $likes++;
-       }
-   }
-      $likes =($likes/sizeof($dataRelated) )*100;
+         $likes++;
+     }
+ }    
+ if(sizeof($dataRelated)>0){
+  $likes =($likes/sizeof($dataRelated) )*100;
+}
 
 
-   if(count($data) > 0 )
-   {
+if(count($data) > 0 )
+{
     return view('review',$data)->with('likes',$likes);
        // return view('review', $data,$dataRate);
 

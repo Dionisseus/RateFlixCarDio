@@ -69,7 +69,6 @@ background-blend-mode:multiply !important;">
                 @endforeach
             </article>
             <form id="reviewForm" role="form" method="POST" action="reviewsRate">  
-                {{ csrf_field() }}
                 <textarea id="reviewText" name="reviewText" placeholder="Escribe tu reseña..."></textarea>
                 @foreach ($data as $value)
                 <input type="hidden" id="idUser" name="idUser" value="{{Auth::user()->id}}">
@@ -77,6 +76,7 @@ background-blend-mode:multiply !important;">
                 @endforeach
                 <input type="radio" id="isPositive" name="thumbsUp" class="vote positive" value="1">
                 <input type="radio" id="isNegative" name="thumbsUp" class="vote negative"  value="0">
+                {{ csrf_field() }}
              <input type="submit" value="Enviar">
      </form>
  </section>
