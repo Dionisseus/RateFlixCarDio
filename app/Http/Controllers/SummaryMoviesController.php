@@ -30,7 +30,7 @@ class SummaryMoviesController extends Controller
 
     public function getData(){
       $data['data'] = DB::table('movies')->take(30)->get();
-
+    
       if(count($data) > 0 )
       {
         return view('summaryMovies' , $data);

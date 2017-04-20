@@ -12,7 +12,7 @@
     };
   </script>
 
-  <form method="POST" action="getData" enctype="multipart/form-data">
+  <form method="POST" action="reviews" enctype="multipart/form-data">
     <input type='hidden' class='tileId' name="title_id" value="">
       {{ csrf_field() }}
   </form>
@@ -20,7 +20,7 @@
 <h1 style="margin: auto; margin-top: 10px;"></h1>
   <div class="row">
     <h4>
-      RESEÑAS QUE TE PODRÍAN INTERESAR
+      Popular Reviews
     </h4>
     <div class="row__inner">
 

@@ -87,7 +87,7 @@
                                     <li>
 
                                       <a href="{{ url('/insertMovie') }}">
-                                        Profile
+                                        Add Movie
                                       </a>
 
                                       <form id="profile">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Movies;
+use App\Rates;
 use Illuminate\Support\Facades\Input;
 use DB;
 class MoviesController extends Controller
@@ -44,10 +45,11 @@ class MoviesController extends Controller
     public function getData(Request $request)
     {
       $data['data'] = DB::table('movies')->where('id', $request['title_id'])->get();
+      $dataRate['dataRate'] = DB::table('rates')->where('idMovie', $request['title_id'])->take(30)->get();
 
       if(count($data) > 0 )
       {
-        return view('review', $data);
+        return view('review', $data,$dataRate);
 
       }
       else{
@@ -62,12 +64,8 @@ class MoviesController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $user = new movies;
-
-
         $user->name = $request['name'];
-
       if(isset($request->image))
       {
         $file = Input::file('image');
@@ -82,8 +80,20 @@ class MoviesController extends Controller
       $user->duration = $request['duration'];
 
         $user->save();
-        return 'data saved';
+       return redirect('summary');
     }
+
+    public function getDataRate(Request $request)
+{
+    $review = new rates;
+    $review->idUser = $request['idUser'];
+    $review->idMovie = $request['idMovie'];
+    $review->thumbsUp = $request['thumbsUp'];
+    $review->review = $request['reviewText'];
+
+    $review->save();
+    return redirect('summary');
+}
 
     /**
      * Display the specified resource.

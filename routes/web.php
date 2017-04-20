@@ -27,7 +27,8 @@ Route::get('/summary', function () {
     return view('summaryMovies');
 });
 Route::get('summary','SummaryMoviesController@getData');
-Route::post('getData', 'MoviesController@getData');
+Route::post('reviews', 'MoviesController@getData');
+Route::post('reviewsRate', 'MoviesController@getDataRate');
 Route::get('/profile', function () {
     return view('profile');
 });

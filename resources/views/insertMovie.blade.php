@@ -80,7 +80,7 @@
                             <label for="duration" class="col-md-4 control-label">Duración de Película</label>
 
                             <div class="col-md-6">
-                                <input id="duration" type="text" class="form-control" name="duration" required>
+                                <input id="duration" type="number" class="form-control" name="duration" required>
 
 
                             </div>
