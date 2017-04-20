@@ -26,21 +26,21 @@
     </h4>
     <div class="row__inner">
 
+
     @foreach ($data as $value)
-
-
 
       <div id="{{ $value->id }}" title="{{$value->genre}}" class="tile">
         <div class="tile__media">
 
           <img class="tile__img" src= "{{ $value->image }}" alt="" width="150px" height="150px" />
         </div>
+        <!-- <a href="{{ url('/review?id=') }}{{$value->id }}"> -->
+
         <div class="tile__details">
           <div class="tile__title">
         {{ $value->name }}
           </div>
         </div>
-    </div>
 
        </div>
        @endforeach
