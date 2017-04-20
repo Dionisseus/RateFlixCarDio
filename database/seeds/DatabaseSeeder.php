@@ -30,5 +30,7 @@ class DatabaseSeeder extends Seeder
             'avatar' => 'M',
         ]);
 
+        $this->call(MoviesSeeder::class);
+        $this->call(RatesSeeder::class);
     }
 }

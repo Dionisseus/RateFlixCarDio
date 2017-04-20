@@ -14,22 +14,22 @@ class MoviesSeeder extends Seeder
           // $this->call(UsersTableSeeder::class);
         DB::table('movies')->insert([
             'name' => 'Interestellar',
-            'image' => 'imagen',
+            'image' => 'images/banner.jpg',
             'genre' => 'Ciencia-Ficcion',
             'actor' => 'Matthew McConaughey Anne Hathaway Jessica Chastain Bill Irwin Ellen Burstyn Michael Caine',
             'sinopsis' => 'text',
             'duration' => '160',
-            'rate' => '85',
+
         ]);
 
         DB::table('movies')->insert([
             'name' => 'Batman: The Dark Knight',
-            'image' => 'imagen',
+            'image' => 'images/batman.jpg',
             'genre' => 'Ciencia-Ficcion',
             'actor' => 'Christian Bale Heath Ledger Morgan Freeman Michael Caine',
             'sinopsis' => 'text',
             'duration' => '180',
-            'rate' => '92',
+
         ]);
     }
 }

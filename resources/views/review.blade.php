@@ -2,101 +2,100 @@
 @section('content')
 <!DOCTYPE>
 <html>
-    <head>
-        <title>Reseña | Interestelar</title>
-        <meta charset="UTF-8">
-    </head>
-    <body style="background:rgb(40,40,40) url('../images/banner.jpg') no-repeat center !important;   background-size:100% auto !important;
-      padding:0 !important;
-      margin:0 !important;
-      background-blend-mode:multiply !important;">
-        <article id="movieReview">
-            <h1>Interestelar</h1>
-            <section class="block">
-                <h4>Director</h4>
-                <span class="name">Christopher Nolan</span>
+<head>
+   <meta charset="UTF-8">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+   <!-- CSRF Token -->
+</head>
+@foreach ($data as $value)
+<body style="background:rgb(40,40,40) url('../{{$value->image}}') no-repeat center !important;   background-size:100% auto !important;
+padding:0 !important;
+margin:0 !important;
+background-blend-mode:multiply !important;">
+@endforeach
+
+<article id="movieReview">
+ @foreach ($data as $value)
+ <h1>{{ $value->name }}</h1>
+ @endforeach
+ <section class="block">
+              <!--  <h4>Director</h4>
+                @foreach ($data as $value)
+                <span class="name">{{ $value->actor }}</span>
+                @endforeach-->
                 <h4>Elenco</h4>
-                <span class="name">Matthew McConaughey</span>
-                <span class="name">Anne Hathaway</span>
+                @foreach ($data as $value)
+                <span class="name">{{ $value->actor }}</span>
+                @endforeach
+              <!--  <span class="name">Anne Hathaway</span>
                 <span class="name">Jessica Chastain</span>
                 <span class="name">Bill Irwin</span>
                 <span class="name">Ellen Burstyn</span>
-                <span class="name">Michael Caine</span>
+                <span class="name">Michael Caine</span> -->
                 <h4>Generos</h4>
-                <span class="name">Ciencia ficción</span>
+                @foreach ($data as $value)
+                <span class="name">{{$value->genre}}</span>
+                @endforeach
+
                 <h4>Calificacion</h4>
-                <span class="score">85</span>
+                <span class="score">{{$likes}}</span>
+
             </section>
             <section class="block">
-                <h4>Reseñas de los miembros</h4>
                 <article class="reviewsContainer">
+                    <h4>Reseñas de los miembros</h4>
+                    @foreach ($dataRate as $rate)
+                    @if($rate->thumbsUp === 1)
                     <div class="reviewUser">
                         <div class="rate positive">
                             <span class="rateMessage"></span>
                         </div>
                         <p class="rateContent">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Pellentesque vestibulum porta turpis at tincidunt. Orci varius
-                            natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Nullam commodo lorem at est blandit imperdiet.
-                        </p>
+                          {{$rate->review}}
+                      </p>
+                  </div>
+                  @endif
+                  @if($rate->thumbsUp === 0)
+                  <div class="reviewUser">
+                    <div class="rate negative">
+                        <span class="rateMessage"></span>
                     </div>
-                    <div class="reviewUser">
-                        <div class="rate negative">
-                            <span class="rateMessage"></span>
-                        </div>
-                        <p class="rateContent">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Pellentesque vestibulum porta turpis at tincidunt. Orci varius
-                            natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Nullam commodo lorem at est blandit imperdiet.
-                        </p>
-                    </div>
-                    <div class="reviewUser">
-                        <div class="rate positive">
-                            <span class="rateMessage"></span>
-                        </div>
-                        <p class="rateContent">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Pellentesque vestibulum porta turpis at tincidunt. Orci varius
-                            natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Nullam commodo lorem at est blandit imperdiet.
-                        </p>
-                    </div>
-                    <div class="reviewUser">
-                        <div class="rate negative">
-                            <span class="rateMessage"></span>
-                        </div>
-                        <p class="rateContent">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Pellentesque vestibulum porta turpis at tincidunt. Orci varius
-                            natoque penatibus et magnis dis parturient montes, nascetur
-                            ridiculus mus. Nullam commodo lorem at est blandit imperdiet.
-                        </p>
-                    </div>
-                </article>
-                <form id="reviewForm">
-                    <textarea placeholder="Escribe tu reseña..."></textarea>
-                    <input type="hidden">
-                    <div value="1" class="vote positive"></div>
-                    <div value="0" class="vote negative"></div>
-                    <input type="submit" value="Enviar">
-                </form>
-            </section>
-            <section class="block">
-                <h4>Sinopsis</h4>
-                <span class="argument">Inspirada en la teoría del experto en relatividad Kip Stepehen Thorne
-                    sobre la existencia de los agujeros de gusano, y su función como canal
-                    para llevar a cabo los viajes en el tiempo. La historia gira en torno a
-                    un grupo de intrépidos exploradores que se adentran por uno de esos agujeros
-                    y viajan a través del mismo, encontrándose en otra dimensión. Un mundo
-                    desconocido se abre ante ellos y deberán luchar por mantenerse unidos si
-                    quieren volver de una pieza.</span>
-                <h4>Sugerencias</h4>
-                <div class="suggest" name="2001 A Space Odyssey" data_src="images/2001ASpaceOdysseyMovie.jpg"></div>
-                <div class="suggest" name="the martian" data_src="images/theMartian.jpg"></div>
-            </section>
-        </article>
-    </body>
+                    <p class="rateContent">
+                        {{$rate->review}}
+                    </p>
+                </div>
+                @endif
+                @endforeach
+            </article>
+            <form id="reviewForm" role="form" method="POST" action="reviewsRate">  
+                <textarea id="reviewText" name="reviewText" placeholder="Escribe tu reseña..."></textarea>
+                @foreach ($data as $value)
+                <input type="hidden" id="idUser" name="idUser" value="{{Auth::user()->id}}">
+                <input type="hidden" id="idMovie" name="idMovie" value="{{$value->id}}">
+                @endforeach
+                <input type="radio" id="isPositive" name="thumbsUp" class="vote positive" value="1">
+                <input type="radio" id="isNegative" name="thumbsUp" class="vote negative"  value="0">
+                {{ csrf_field() }}
+             <input type="submit" value="Enviar">
+     </form>
+ </section>
+ <section class="block">
+    <h4>Sinopsis</h4>
+    @foreach ($data as $value)
+    <span class="argument">
+        {{ $value->sinopsis }}
+    </span>
+    @endforeach
+    <h4>Sugerencias</h4>
+    @foreach ($dataRelated as $value)
+    <div class="suggest" name="{{$value->name}}" >
+        <img class="imagenDiv" src="{{$value->image}}" alt="{{$value->name}}"/>
+    </div>
+    @endforeach
+</section>
+</article>
+
+</body>
 </html>
 @endsection
