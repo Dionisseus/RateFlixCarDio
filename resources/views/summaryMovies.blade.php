@@ -7,6 +7,7 @@
     window.onload = function() {
         $(".tile").on("click",function() {
             $(".tileId").val(this.id);
+            $(".tileId").val(this.genre);
             $("form").submit();
         });
     };
@@ -14,6 +15,7 @@
 
   <form method="POST" action="reviews" enctype="multipart/form-data">
     <input type='hidden' class='tileId' name="title_id" value="">
+     <input type='hidden' class='genre' name="genre_val" value="">
       {{ csrf_field() }}
   </form>
 

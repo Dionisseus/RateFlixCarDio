@@ -45,17 +45,24 @@ class MoviesController extends Controller
     public function getData(Request $request)
     {
       $data['data'] = DB::table('movies')->where('id', $request['title_id'])->get();
-      $dataRate['dataRate'] = DB::table('rates')->where('idMovie', $request['title_id'])->take(30)->get();
+      $dataRate['dataRate'] = DB::table('rates')->where('idMovie', $request['title_id'])->get();
+      $related['related'] = DB::table('movies')->where('genre', $request['genre_val'])->take(2)->get();
 
       if(count($data) > 0 )
       {
-        return view('review', $data,$dataRate);
+        return view('review', $data,$dataRate,$related);
 
       }
       else{
         return view('review');
       }
     }
+
+
+
+
+
+
     /**
      * Store a newly created resource in storage.
      *

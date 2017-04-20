@@ -8,12 +8,12 @@
 
    <!-- CSRF Token -->
 </head>
-
-<body style="background:rgb(40,40,40) url('../images/banner.jpg') no-repeat center !important;   background-size:100% auto !important;
+@foreach ($data as $value)
+<body style="background:rgb(40,40,40) url('../{{$value->image}}') no-repeat center !important;   background-size:100% auto !important;
 padding:0 !important;
 margin:0 !important;
 background-blend-mode:multiply !important;">
-
+@endforeach
 
 <article id="movieReview">
  @foreach ($data as $value)
@@ -88,8 +88,9 @@ background-blend-mode:multiply !important;">
     </span>
     @endforeach
     <h4>Sugerencias</h4>
-    <div class="suggest" name="2001 A Space Odyssey" data_src="images/2001ASpaceOdysseyMovie.jpg"></div>
-    <div class="suggest" name="the martian" data_src="images/theMartian.jpg"></div>
+    @foreach ($related as $value)
+    <div class="suggest" name="{{$value->name}}" data_src="../{{$value->image}}"></div>
+    @endforeach
 </section>
 </article>
 
