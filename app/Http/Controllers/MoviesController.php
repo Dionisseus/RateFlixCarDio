@@ -55,7 +55,7 @@ class MoviesController extends Controller
      }
  }    
  if(sizeof($dataRelated)>0){
-  $likes =($likes/sizeof($dataRelated) )*100;
+  $likes = floor(($likes/sizeof($dataRelated) )*100);
 }
 
 
