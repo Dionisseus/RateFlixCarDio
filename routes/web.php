@@ -37,6 +37,8 @@ Route::post('/review', function () {
 });
 Route::post('review','MoviesController@index');
 Route::post('review','MoviesController@getData');
+Route::post('myreviews','MoviesController@getMyReviews');
+Route::post('deleteReview','MoviesController@deleteReview');
 Route::get('pruebasMovies',function(){
   $movies = Movies::where('genre','accion')->get();
     dd(movies);
