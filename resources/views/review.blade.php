@@ -3,23 +3,23 @@
 <!DOCTYPE>
 <html>
 <head>
-   <meta charset="UTF-8">
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ <meta charset="UTF-8">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-   <!-- CSRF Token -->
+ <!-- CSRF Token -->
 </head>
 @foreach ($data as $value)
 <body style="background:rgb(40,40,40) url('../{{$value->image}}') no-repeat center !important;   background-size:100% auto !important;
-padding:0 !important;
-margin:0 !important;
-background-blend-mode:multiply !important;">
-@endforeach
+    padding:0 !important;
+    margin:0 !important;
+    background-blend-mode:multiply !important;">
+    @endforeach
 
-<article id="movieReview">
- @foreach ($data as $value)
- <h1>{{ $value->name }}</h1>
- @endforeach
- <section class="block">
+    <article id="movieReview">
+       @foreach ($data as $value)
+       <h1>{{ $value->name }}</h1>
+       @endforeach
+       <section class="block">
               <!--  <h4>Director</h4>
                 @foreach ($data as $value)
                 <span class="name">{{ $value->actor }}</span>
@@ -37,10 +37,8 @@ background-blend-mode:multiply !important;">
                 @foreach ($data as $value)
                 <span class="name">{{$value->genre}}</span>
                 @endforeach
-
                 <h4>Calificacion</h4>
                 <span class="score">{{$likes}}</span>
-
             </section>
             <section class="block">
                 <article class="reviewsContainer">
@@ -76,27 +74,25 @@ background-blend-mode:multiply !important;">
                 @endforeach
                 <input type="radio" id="isPositive" name="thumbsUp" class="vote positive" value="1" required>
                 <input type="radio" id="isNegative" name="thumbsUp" class="vote negative"  value="0" required>
-
                 {{ csrf_field() }}
-             <input type="submit" value="Enviar">
-     </form>
- </section>
- <section class="block">
-    <h4>Sinopsis</h4>
-    @foreach ($data as $value)
-    <span class="argument">
-        {{ $value->sinopsis }}
-    </span>
-    @endforeach
-    <h4>Sugerencias</h4>
-    @foreach ($dataRelated as $value)
-    <div class="suggest" name="{{$value->name}}" >
-        <img class="imagenDiv" src="{{$value->image}}" alt="{{$value->name}}"/>
-    </div>
-    @endforeach
-</section>
-</article>
-
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+        <section class="block">
+            <h4>Sinopsis</h4>
+            @foreach ($data as $value)
+            <span class="argument">
+                {{ $value->sinopsis }}
+            </span>
+            @endforeach
+            <h4>Sugerencias</h4>
+            @foreach ($dataRelated as $value)
+            <div class="suggest" name="{{$value->name}}" >
+                <img class="imagenDiv" src="{{$value->image}}" alt="{{$value->name}}"/>
+            </div>
+            @endforeach
+        </section>
+    </article>
 </body>
 </html>
 @endsection

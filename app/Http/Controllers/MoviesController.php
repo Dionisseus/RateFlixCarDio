@@ -30,7 +30,6 @@ class MoviesController extends Controller
      */
     public function create()
     {
-        //
         return Movies::create([
             'name' => $data['name'],
             'image' => $data['image'],
