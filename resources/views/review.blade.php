@@ -3,10 +3,10 @@
 <!DOCTYPE>
 <html>
 <head>
- <meta charset="UTF-8">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <meta charset="UTF-8">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
- <!-- CSRF Token -->
+   <!-- CSRF Token -->
 </head>
 @foreach ($data as $value)
 <body style="background:rgb(40,40,40) url('../{{$value->image}}') no-repeat center !important;   background-size:100% auto !important;
@@ -16,10 +16,10 @@
     @endforeach
 
     <article id="movieReview">
-       @foreach ($data as $value)
-       <h1>{{ $value->name }}</h1>
-       @endforeach
-       <section class="block">
+     @foreach ($data as $value)
+     <h1>{{ $value->name }}</h1>
+     @endforeach
+     <section class="block">
               <!--  <h4>Director</h4>
                 @foreach ($data as $value)
                 <span class="name">{{ $value->actor }}</span>
@@ -87,10 +87,27 @@
             @endforeach
             <h4>Sugerencias</h4>
             @foreach ($dataRelated as $value)
-            <div class="suggest" name="{{$value->name}}" >
+            <div class="suggest" id="{{ $value->id }}" title="{{$value->genre}}" >
                 <img class="imagenDiv" src="{{$value->image}}" alt="{{$value->name}}"/>
             </div>
             @endforeach
+            
+            <script>
+                window.onload = function() {
+                    $(".suggest").on("click",function() {
+                        $(".tileId").val(this.id);
+                        $(".genreId").val(this.title);
+                        $("form").submit();
+                    });
+                };
+            </script>
+
+            <form method="POST" action="reviews" enctype="multipart/form-data">
+                <input type='hidden' class='tileId' name="title_id" value="">
+                <input type='hidden' type="text" class='genreId' name="genre_val" value="">
+                {{ csrf_field() }}
+            </form>
+
         </section>
     </article>
 </body>
