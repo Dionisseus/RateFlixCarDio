@@ -86,6 +86,11 @@
                                 <ul class="dropdown-menu" role="menu">
                                     <li>
 
+
+                                      <a href="{{ url('/profile') }}">
+                                        Profile
+                                      </a>
+
                                       <a href="{{ url('/insertMovie') }}">
                                         Add Movie
                                       </a>
@@ -123,5 +128,6 @@
 
         <script src="{{ asset('js/netflixcaroussel.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 </html>
