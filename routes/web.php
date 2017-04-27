@@ -35,6 +35,8 @@ Route::get('/profile', function () {
 Route::post('/review', function () {
     return view('review');
 });
+Route::post('profile','UsersController@getData');
+Route::post('updateData','UsersController@updateData');
 Route::post('review','MoviesController@index');
 Route::post('review','MoviesController@getData');
 Route::post('myreviews','MoviesController@getMyReviews');
