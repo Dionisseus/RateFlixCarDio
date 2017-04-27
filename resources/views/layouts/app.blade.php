@@ -78,11 +78,13 @@
                     </a>
 
                     <div class="main">
+        <!-- <h1>Vue Autocomplete @{{ vModelLike }}</h1> -->
 <autocomplete
             id="input__id-optional"
             class="input_class optional"
             name="people"
             placeholder="Type Here"
+            url="https://github.com/aFarkas/remote-list/blob/master/remote-list.jquery.json"
             param="q"
             limit="5"
             anchor="value"
@@ -90,8 +92,10 @@
             model="vModelLike">
         </autocomplete>
     </div>
+<!--     <div class="preview">
         <h1>Data Selected</h1>
         <pre>@{{ data | json 2 }}</pre>
+    </div> -->
 
 
 
