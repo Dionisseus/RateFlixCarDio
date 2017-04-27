@@ -73,29 +73,43 @@
                         &nbsp;
                     </ul>
 
-                    <a class="navbar-brand text-uppercase"style="font-size:50px; color:#ff6800"  href="{{ url('/') }}" >
+                    <a class="navbar-brand text-uppercase" style="font-size:50px; color:#ff6800"  href="{{ url('/') }}" >
                         {{ config('app.name', 'RateFlix') }}
                     </a>
 
-                    <div class="main">
-        <!-- <h1>Vue Autocomplete @{{ vModelLike }}</h1> -->
-<autocomplete
-            id="input__id-optional"
-            class="input_class optional"
-            name="people"
-            placeholder="Type Here"
-            url="https://github.com/aFarkas/remote-list/blob/master/remote-list.jquery.json"
-            param="q"
-            limit="5"
-            anchor="value"
-            label="label"
-            model="vModelLike">
-        </autocomplete>
-    </div>
-<!--     <div class="preview">
-        <h1>Data Selected</h1>
-        <pre>@{{ data | json 2 }}</pre>
-    </div> -->
+                   <div id="apps">
+  <autocomplete-input :options="options" @select="onOptionSelect">
+    <template slot="item" scope="option">
+      <article class="media">
+        <figure class="media-left">
+          <p class="image is-64x64">
+            <img :src="option.thumbnail">
+          </p>
+        </figure>
+        <p>
+          <strong>@{{ option.title }}</strong>
+          <br>@{{ option.description }}
+        </p>
+      </article>
+    </template>
+  </autocomplete-input>
+</div>
+
+<script id="autocomplete-input-template" type="text/x-template">
+  <div class="autocomplete-input">
+    <p class="control has-icon has-icon-right">
+      <input v-model="keyword" class="input is-large" placeholder="Search..." @input="onInput($event.target.value)" @keyup.esc="isOpen = false" @blur="isOpen = false" @keydown.down="moveDown" @keydown.up="moveUp" @keydown.enter="select">
+      <i class="fa fa-angle-down"></i>
+    </p>
+    <ul v-show="isOpen" class="options-list">
+      <li v-for="(option, index) in fOptions" :class="{
+          'highlighted': index === highlightedPosition
+        }" @mouseenter="highlightedPosition = index" @mousedown="select">
+        <slot name="item" :title="option.title" :description="option.description" :thumbnail="option.thumbnail"/>
+      </li>
+    </ul>
+  </div>
+</script>
 
 
 
@@ -165,118 +179,93 @@
 @yield('content')
 </div>
 
-<script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.14/vue.min.js"></script>
-    <!-- <script src="./vue-autocomplete.js"></script> -->
- <script src="{{ asset('js/vue-autocomplete.min.js') }}"></script>
-<script src="{{ asset('js/vue-autocomplete.js') }}"></script>
-    <script>
-        new Vue({
-            el: 'body',
-            data: function() {
-                return {
-                    vModelLike: "",
-                    data: {}
-                };
-            },
-            events: {
-                /**
-                *   Global Autocomplete Callback Event
-                *
-                *   @event-name autocomplete:{event-name}
-                *   @param {String} name name of auto
-                *   @param {Object} data
-                *   @param {Object} json - ajax-loaded only
-                */
-                // Autocomplete on before ajax progress
-                'autocomplete:before-ajax': function (name,data){
-                    console.log('before-ajax',name,data);
-                },
-                // Autocomplete on ajax progress
-                'autocomplete:ajax-progress': function(name,data){
-                    console.log('ajax-progress',data);
-                },
-                // Autocomplete on ajax loaded
-                'autocomplete:ajax-loaded': function(name,data,json){
-                    console.log('ajax-loaded',data,json);
-                },
-                // Autocomplete on focus
-                'autocomplete:focus': function(name,evt){
-                    console.log('focus',name,evt);
-                },
-                // Autocomplete on input
-                'autocomplete:input': function(name,data){
-                    console.log('input',data);
-                },
-                // Autocomplete on blur
-                'autocomplete:blur': function(name,evt){
-                    console.log('blur',evt);
-                },
-                // Autocomplete on show
-                'autocomplete:show': function(name){
-                    console.log('show',name);
-                },
-                // Autocomplete on selected
-                'autocomplete:selected': function(name,data){
-                    console.log('selected',data);
-                    this.data = data;
-                },
-                // Autocomplete on hide
-                'autocomplete:hide': function(name){
-                    console.log('hide',name);
-                },
-                /**
-                *   Spesific Autocomplete Callback Event By Name
-                *
-                *   @event-name autocomplete-{component-name}:{event-name}
-                *   @param {String} name name of auto
-                *   @param {Object} data
-                *   @param {Object} json - ajax-loaded only
-                */
-                // Autocomplete on before ajax progress
-                'autocomplete-people:before-ajax': function(data){
-                    console.log('before-ajax-people',data);
-                },
-                // Autocomplete on ajax progress
-                'autocomplete-people:ajax-progress': function(data){
-                    console.log('ajax-progress-people',data);
-                },
-                // Autocomplete on ajax loaded
-                'autocomplete-people:ajax-loaded': function(data,json){
-                    console.log('ajax-loaded-people',data,json);
-                },
-                // Autocomplete-people on focus
-                'autocomplete-people:focus': function(evt){
-                    console.log('focus-people',evt);
-                },
-                // Autocomplete-people on input
-                'autocomplete-people:input': function(data){
-                    console.log('input-people',data);
-                },
-                // Autocomplete-people on blur
-                'autocomplete-people:blur': function(evt){
-                    console.log('blur-people',evt);
-                },
-                // Autocomplete-people on show
-                'autocomplete-people:show': function(){
-                    console.log('show-people');
-                },
-                // Autocomplete-people on selected
-                'autocomplete-people:selected': function(data){
-                    console.log('selected-people',data);
-                },
-                // Autocomplete-people on hide
-                'autocomplete-people:hide': function(){
-                    console.log('hide-people');
-                },
-            }
-        });
-    </script>
+
 
 <!-- Scripts -->
 
+<script src="https://unpkg.com/vue@2.3.0/dist/vue.js"></script>
+<script> 
+ window.onload = function() {
+Vue.component('autocomplete-input', {
+    template: '#autocomplete-input-template',
+    props: {
+      options: {
+        type: Array,
+        required: true
+      }
+    },
+    data() {
+      return {
+        isOpen: false,
+        highlightedPosition: 0,
+        keyword: ''
+      }
+    },
+    computed: {
+      fOptions() {
+        const re = new RegExp(this.keyword, 'i')
+        return this.options.filter(o => o.title.match(re))
+      }
+    },
+    methods: {
+      onInput(value) {
+          this.highlightedPosition = 0
+          this.isOpen = !!value
+        },
+        moveDown() {
+          if (!this.isOpen) {
+            return
+          }
+          this.highlightedPosition =
+            (this.highlightedPosition + 1) % this.fOptions.length
+        },
+        moveUp() {
+          if (!this.isOpen) {
+            return
+          }
+          this.highlightedPosition = this.highlightedPosition - 1 < 0 ? this.fOptions.length - 1 : this.highlightedPosition - 1
+        },
+        select() {
+          const selectedOption = this.fOptions[this.highlightedPosition]
+          this.$emit('select', selectedOption)
+          this.isOpen = false
+          this.keyword = selectedOption.title
+        }
+    }
+  })
+
+  new Vue({
+    el: '#apps',
+    data: {
+      options: [{
+        title: 'First Scene',
+        description: 'lorem ipsum dolor amet.',
+        thumbnail: 'http://lorempicsum.com/nemo/200/200/1'
+      }, {
+        title: 'Second Scene',
+        description: 'lorem ipsum dolor amet.',
+        thumbnail: 'http://lorempicsum.com/nemo/200/200/2'
+      }, {
+        title: 'Third Scene',
+        description: 'lorem ipsum dolor amet.',
+        thumbnail: 'http://lorempicsum.com/nemo/200/200/3'
+      }, {
+        title: 'Fourth Scene',
+        description: 'lorem ipsum dolor amet.',
+        thumbnail: 'http://lorempicsum.com/nemo/200/200/4'
+      }]
+    },
+    methods: {
+      onOptionSelect(option) {
+        console.log('Selected option:', option)
+      }
+    }
+  })
+};
+</script>
 <script src="{{ asset('js/app.js') }}"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="{{ asset('js/netflixcaroussel.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
+<script src="{{ asset('js/scripts.js') }}"></script>
 </body>
 </html>
