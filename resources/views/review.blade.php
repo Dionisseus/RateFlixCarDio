@@ -10,16 +10,16 @@
 </head>
 @foreach ($data as $value)
 <body style="background:rgb(40,40,40) url('../{{$value->image}}') no-repeat center !important;   background-size:100% auto !important;
-    padding:0 !important;
-    margin:0 !important;
-    background-blend-mode:multiply !important;">
-    @endforeach
+padding:0 !important;
+margin:0 !important;
+background-blend-mode:multiply !important;">
+@endforeach
 
-    <article id="movieReview">
-     @foreach ($data as $value)
-     <h1>{{ $value->name }}</h1>
-     @endforeach
-     <section class="block">
+<article id="movieReview">
+ @foreach ($data as $value)
+ <h1>{{ $value->name }}</h1>
+ @endforeach
+ <section class="block">
               <!--  <h4>Director</h4>
                 @foreach ($data as $value)
                 <span class="name">{{ $value->actor }}</span>
@@ -37,8 +37,10 @@
                 @foreach ($data as $value)
                 <span class="name">{{$value->genre}}</span>
                 @endforeach
+
                 <h4>Calificacion</h4>
                 <span class="score">{{$likes}}</span>
+
             </section>
             <section class="block">
                 <article class="reviewsContainer">
@@ -67,49 +69,33 @@
                 @endforeach
             </article>
             <form id="reviewForm" role="form" method="POST" action="reviewsRate">  
-                <textarea id="reviewText" name="reviewText" class="form-control" placeholder="Escribe tu reseña..." required></textarea>
+                <textarea id="reviewText" name="reviewText" placeholder="Escribe tu reseña..."></textarea>
                 @foreach ($data as $value)
                 <input type="hidden" id="idUser" name="idUser" value="{{Auth::user()->id}}">
                 <input type="hidden" id="idMovie" name="idMovie" value="{{$value->id}}">
                 @endforeach
-                <input type="radio" id="isPositive" name="thumbsUp" class="vote positive" value="1" required>
-                <input type="radio" id="isNegative" name="thumbsUp" class="vote negative"  value="0" required>
+                <input type="radio" id="isPositive" name="thumbsUp" class="vote positive" value="1">
+                <input type="radio" id="isNegative" name="thumbsUp" class="vote negative"  value="0">
                 {{ csrf_field() }}
-                <input type="submit" value="Enviar">
-            </form>
-        </section>
-        <section class="block">
-            <h4>Sinopsis</h4>
-            @foreach ($data as $value)
-            <span class="argument">
-                {{ $value->sinopsis }}
-            </span>
-            @endforeach
-            <h4>Sugerencias</h4>
-            @foreach ($dataRelated as $value)
-            <div class="suggest" id="{{ $value->id }}" title="{{$value->genre}}" >
-                <img class="imagenDiv" src="{{$value->image}}" alt="{{$value->name}}"/>
-            </div>
-            @endforeach
-            
-            <script>
-                window.onload = function() {
-                    $(".suggest").on("click",function() {
-                        $(".tileId").val(this.id);
-                        $(".genreId").val(this.title);
-                        $("form").submit();
-                    });
-                };
-            </script>
+             <input type="submit" value="Enviar">
+     </form>
+ </section>
+ <section class="block">
+    <h4>Sinopsis</h4>
+    @foreach ($data as $value)
+    <span class="argument">
+        {{ $value->sinopsis }}
+    </span>
+    @endforeach
+    <h4>Sugerencias</h4>
+    @foreach ($dataRelated as $value)
+    <div class="suggest" name="{{$value->name}}" >
+        <img class="imagenDiv" src="{{$value->image}}" alt="{{$value->name}}"/>
+    </div>
+    @endforeach
+</section>
+</article>
 
-            <form method="POST" action="reviews" enctype="multipart/form-data">
-                <input type='hidden' class='tileId' name="title_id" value="">
-                <input type='hidden' type="text" class='genreId' name="genre_val" value="">
-                {{ csrf_field() }}
-            </form>
-
-        </section>
-    </article>
 </body>
 </html>
 @endsection

@@ -30,6 +30,7 @@ class MoviesController extends Controller
      */
     public function create()
     {
+        //
         return Movies::create([
             'name' => $data['name'],
             'image' => $data['image'],
@@ -50,49 +51,22 @@ class MoviesController extends Controller
       $likes =0;
       foreach ($dataRelated as $p) {
         if($p->thumbsUp ===1){
-           $likes++;
-       }
-   }    
-   if(sizeof($dataRelated)>0){
-      $likes = floor(($likes/sizeof($dataRelated) )*100);
-  }
+         $likes++;
+     }
+ }    
+ if(sizeof($dataRelated)>0){
+  $likes =($likes/sizeof($dataRelated) )*100;
+}
 
 
-  if(count($data) > 0 )
-  {
+if(count($data) > 0 )
+{
     return view('review',$data)->with('likes',$likes);
        // return view('review', $data,$dataRate);
 
 }
 else{
     return view('review');
-}
-}
-
-
-public function getMyReviews(Request $request)
-{
-  $data['dataRate'] = DB::table('rates')->where('idUser', $request['user_id'])->get();
-  if(count($data) > 0 )
-  {
-    return view('myreviews',$data);
-}
-else{
-    return view('myreviews');
-}
-}
-
-public function deleteReview(Request $request)
-{
-    
-    DB::table('rates')->where('idRate', $request['idRate'])->delete();
-  $data['dataRate'] = DB::table('rates')->where('idUser', $request['user_id'])->get();
-  if(count($data) > 0 )
-  {
-    return view('myreviews',$data);
-}
-else{
-    return view('myreviews');
 }
 }
 
