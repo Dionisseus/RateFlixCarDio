@@ -42,6 +42,7 @@ Route::post('review','MoviesController@getData');
 Route::post('myreviews','MoviesController@getMyReviews');
 Route::post('deleteReview','MoviesController@deleteReview');
 Route::get('getMovies',function(){
+    $movies = "";
   $movies = DB::table('movies')->get();
     return($movies);
 });
