@@ -41,9 +41,9 @@ Route::post('review','MoviesController@index');
 Route::post('review','MoviesController@getData');
 Route::post('myreviews','MoviesController@getMyReviews');
 Route::post('deleteReview','MoviesController@deleteReview');
-Route::get('pruebasMovies',function(){
-  $movies = Movies::where('genre','accion')->get();
-    dd(movies);
+Route::get('getMovies',function(){
+  $movies = DB::table('movies')->get();
+    return($movies);
 });
 Route::get('/insertMovie', function () {
     return view('insertMovie');

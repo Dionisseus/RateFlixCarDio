@@ -261,6 +261,12 @@ Vue.component('autocomplete-input', {
       }
     }
   })
+
+    $(".tile").on("click",function() {
+            $(".tileId").val(this.id);
+            $(".genreId").val(this.title);
+            $("form").submit();
+        });
 };
 </script>
 <script src="{{ asset('js/app.js') }}"></script>
