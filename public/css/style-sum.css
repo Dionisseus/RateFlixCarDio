@@ -58,7 +58,7 @@ body {
     width:100%;
     left:0;
 top:0;
-    background:rgba(0,0,0,0.5) url("img/play.png") no-repeat center;
+    background:rgba(0,0,0,0.5) url("../images/play.png") no-repeat center;
     background-size: auto 50%;
     opacity:0;
     pointer-events:none;
@@ -90,11 +90,11 @@ top:0;
 }
 .controls.left {
     left:0;
-    background-image:url("img/left.png") !important;
+    background-image:url("../images/left.png") !important;
 }
 .controls.right {
     right:0;
-    background-image:url("img/right.png") !important;
+    background-image:url("../images/right.png") !important;
 }
 .controls:hover {
     cursor: pointer;

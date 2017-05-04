@@ -34,7 +34,7 @@
             <section class="sub_car">
 
                 @foreach ($data as $value)
-                        <a id="{{ $value->id }}" title="{{$value->genre}}" class="movie" src= "{{ $value->image }}" alt="" width="300px" height="170px" /> </a>
+                        <a id="{{ $value->id }}" title="{{$value->genre}}" class="movie tile" src= "{{ $value->image }}" alt="" width="300px" height="170px" /> </a>
                    @endforeach
 
             </section>
@@ -46,9 +46,8 @@
             <section class="sub_car">
 
                 @foreach ($generofic as $value)
-                <a id="{{ $value->id }}" title="{{$value->genre}}" class="movie" src= "{{ $value->image }}" alt="" width="300px" height="170px" /> </a>
-
-         @endforeach
+                <a id="{{ $value->id }}" title="{{$value->genre}}" class="movie tile" src= "{{ $value->image }}" alt="" width="300px" height="170px" /> </a>
+                @endforeach
             </section>
         </div>
         <h2 class="carTitle">Reseñas de Ciencia-Ficción</h2>
@@ -58,9 +57,8 @@
             <section class="sub_car">
 
                 @foreach ($generos as $value)
-                <a id="{{ $value->id }}" title="{{$value->genre}}" class="movie" src= "{{ $value->image }}" alt="" width="300px" height="170px" /> </a>
-
-         @endforeach
+                <a id="{{ $value->id }}" title="{{$value->genre}}" class="movie tile" src= "{{ $value->image }}" alt="" width="300px" height="170px" /> </a>
+                @endforeach
             </section>
         </div>
     </body>
