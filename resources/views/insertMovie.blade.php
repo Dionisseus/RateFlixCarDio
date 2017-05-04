@@ -47,13 +47,17 @@
                             <label for="genre" class="col-md-4 control-label">Género</label>
 
                             <div class="col-md-6">
-                                <input id="genre" type="text" class="form-control" name="genre" required>
+                              <select  id="genre" class="form-control" name="genre">
+                                  <option value="Ciencia-Ficcion" selected>Ciencia-Ficcion</option>
+                                  <option value="Acción">Acción</option>
+                                </select>
+                              <!--  <input id="genre" type="text" class="form-control" name="genre" required> -->
 
-                                @if ($errors->has('genre'))
+                            <!--    @if ($errors->has('genre'))
                                     <span class="help-block">
                                         <strong>{{ $errors->first('genre') }}</strong>
                                     </span>
-                                @endif
+                                @endif -->
                             </div>
                         </div>
 

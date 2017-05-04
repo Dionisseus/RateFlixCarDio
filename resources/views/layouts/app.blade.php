@@ -20,6 +20,7 @@
     <link href="{!! asset('css/note.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/style.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/autocomplete.css') !!}" rel="stylesheet" type="text/css">
+    <link href="{!! asset('css/style-sum.css') !!}" rel="stylesheet" type="text/css">
     <link href="{!! asset('css/carouselNetflixLike.css') !!}" rel="stylesheet" type="text/css">
 
     <style>
@@ -191,7 +192,7 @@
 <!-- Scripts -->
 
 <script src="https://unpkg.com/vue@2.3.0/dist/vue.js"></script>
-<script> 
+<script>
    window.onload = function() {
     Vue.component('autocomplete-input', {
         template: '#autocomplete-input-template',
@@ -275,5 +276,6 @@ select() {
 <script src="{{ asset('js/netflixcaroussel.js') }}"></script>
 <script src="{{ asset('js/script.js') }}"></script>
 <script src="{{ asset('js/scripts.js') }}"></script>
+<script src="{{ asset('js/script-sum.js') }}"></script>
 </body>
 </html>
