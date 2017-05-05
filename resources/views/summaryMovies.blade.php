@@ -32,7 +32,6 @@
             <div class="controls right"></div>
             <div class="controls left"></div>
             <section class="sub_car">
-
                 @foreach ($data as $value)
                         <a id="{{ $value->id }}" title="{{$value->genre}}" class="movie tile" src= "{{ $value->image }}" alt="" width="300px" height="170px" /> </a>
                    @endforeach

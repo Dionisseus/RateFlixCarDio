@@ -14,6 +14,7 @@
     margin:0 !important;
     background-blend-mode:multiply !important;">
     @endforeach
+      @if (Auth::guest())
 
     <article id="movieReview">
      @foreach ($data as $value)
@@ -66,7 +67,7 @@
                 @endif
                 @endforeach
             </article>
-            <form id="reviewForm" role="form" method="POST" action="reviewsRate">  
+            <form id="reviewForm" role="form" method="POST" action="reviewsRate">
                 <textarea id="reviewText" name="reviewText" class="form-control" placeholder="Escribe tu reseña..." required></textarea>
                 @foreach ($data as $value)
                 <input type="hidden" id="idUser" name="idUser" value="{{Auth::user()->id}}">
@@ -91,7 +92,7 @@
                 <img class="imagenDiv" src="{{$value->image}}" alt="{{$value->name}}"/>
             </div>
             @endforeach
-            
+
             <script>
                 window.onload = function() {
                     $(".suggest").on("click",function() {
@@ -110,6 +111,8 @@
 
         </section>
     </article>
+    @endif
 </body>
 </html>
+
 @endsection
