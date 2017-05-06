@@ -103,3 +103,58 @@ top:0;
 .controls.disabled {
     pointer-events:none !important;
 }
+
+@media (max-device-width:1024px) {
+    .sub_car {
+        overflow-x: scroll !important;
+    }
+}
+@media (max-device-width:667px) {
+    .carTitle {
+        font-size: 2em !important;
+        margin-bottom:20px !important;
+    }
+    .car_ {
+        height: 270px !important;
+    }
+    .movie {
+        height: 230px !important;
+        width: 400px !important;
+    }
+}
+@media (max-device-width:568px) {
+    .carTitle {
+        font-size: 2.5em !important;
+    }
+    .car_ {
+        height: 300px !important;
+    }
+    .movie {
+        height: 270px !important;
+        width: 430px !important;
+    }
+}
+@media (max-device-width:414px) {
+    .carTitle {
+        font-size: 3em !important;
+    }
+    .car_ {
+        height: 350px !important;
+    }
+    .movie {
+        height: 330px !important;
+        width: 430px !important;
+    }
+}
+@media (max-device-width:360px) {
+    .carTitle {
+        font-size: 3.5em !important;
+    }
+    .car_ {
+        height: 450px !important;
+    }
+    .movie {
+        height: 450px !important;
+        width: 450px !important;
+    }
+}
