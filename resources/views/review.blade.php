@@ -15,6 +15,9 @@
     background-blend-mode:multiply !important;">
     @endforeach
       @if (Auth::guest())
+ <h1>Para poder ver las reseñas se necesita registrarse.</h1>
+
+      @else
 
     <article id="movieReview">
      @foreach ($data as $value)
