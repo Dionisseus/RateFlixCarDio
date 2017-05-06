@@ -103,3 +103,58 @@ top:0;
 .controls.disabled {
     pointer-events:none !important;
 }
+
+@media (max-device-width:1024px) {
+    .sub_car {
+        overflow-x: scroll;
+    }
+}
+@media (max-device-width:667px) {
+    .carTitle {
+        font-size: 2em;
+        margin-bottom:20px;
+    }
+    .car_ {
+        height: 270px;
+    }
+    .movie {
+        height: 230px;
+        width: 400px;
+    }
+}
+@media (max-device-width:568px) {
+    .carTitle {
+        font-size: 2.5em;
+    }
+    .car_ {
+        height: 300px;
+    }
+    .movie {
+        height: 270px;
+        width: 430px;
+    }
+}
+@media (max-device-width:414px) {
+    .carTitle {
+        font-size: 3em;
+    }
+    .car_ {
+        height: 350px;
+    }
+    .movie {
+        height: 330px;
+        width: 430px;
+    }
+}
+@media (max-device-width:360px) {
+    .carTitle {
+        font-size: 3.5em;
+    }
+    .car_ {
+        height: 450px;
+    }
+    .movie {
+        height: 450px;
+        width: 450px;
+    }
+}
