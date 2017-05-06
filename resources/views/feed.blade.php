@@ -14,9 +14,16 @@
         </ol>
         <div class="carousel-inner" role="listbox">
           <div class="item active">
+
+            @if (Auth::guest())
+              <a  href="{{ route('login') }}">
+                  <img class="first-slide" src="images/hacksaw.jpg" alt="First slide" >
+                <a/>
+        @else
             <a href="{{ url('/summary') }}">
-            <img class="first-slide" src="images/hacksaw.jpg" alt="First slide" >
+              <img class="first-slide" src="images/hacksaw.jpg" alt="First slide" >
           </a>
+@endif
             <div class="container">
               <div class="carousel-caption">
               <!--  <h1>Example headline.</h1>
@@ -34,14 +41,20 @@
               </div>
               </div>
 
-          
+
               </div>
             </div>
           </div>
           <div class="item">
+            @if (Auth::guest())
+              <a  href="{{ route('login') }}">
+                  <img class="first-slide" src="images/logan.jpg" alt="First slide" >
+                <a/>
+        @else
             <a  href="{{ url('/summary') }}">
             <img class="second-slide" src="images/logan.jpg" alt="Logan">
           </a>
+          @endif
             <div class="container">
               <div class="carousel-caption">
             <!--    <h1>Another example headline.</h1>
@@ -61,9 +74,15 @@
             </div>
           </div>
           <div class="item">
+            @if (Auth::guest())
+              <a  href="{{ route('login') }}">
+                  <img class="first-slide" src="images/hacksaw.jpg" alt="First slide" >
+                <a/>
+                @else
             <a href="{{ url('/summary') }}">
             <img class="third-slide" src="images/bandb.jpeg" alt="Third slide">
           </a>
+          @endif
             <div class="container">
               <div class="carousel-caption">
             <!--    <h1>One more for good measure.</h1>

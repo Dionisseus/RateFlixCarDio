@@ -1,0 +1,105 @@
+body,html {
+    padding:0;
+    border:0;
+    margin:0;
+}
+* {
+    font-family:"Open Sans",sans-serif !important;
+}
+body {
+    background:rgba(30,30,30,1);
+}
+.car_ {
+    position: relative;
+    width:100%;
+    height:200px;
+}
+.carTitle {
+    width:Calc(100% - 15px);
+    padding:0;
+    margin:0 15px;
+    color:rgba(255,255,255,0.8);
+    font-weight:normal;
+    margin-top:65px !important;
+}
+.sub_car {
+    width: auto;
+    height:100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    white-space: nowrap;
+}
+
+.movie {
+    position: relative;
+    z-index:0;
+    height:170px;
+    display: inline-block;
+    vertical-align: middle;
+    margin:15px 15px;
+    background:transparent no-repeat center;
+    background-size:cover !important;
+    width:300px;
+    box-shadow:2px 2px 8px 1px rgba(0,0,0,0.8);
+    transition:all 0.2s ease-in-out;
+}
+.movie:first-of-type {
+    margin-left:40px;
+}
+.movie:last-of-type {
+    margin-right:40px;
+}
+.movie:not(:last-of-type) {
+    margin-right:0px !important;
+}
+.movie::after {
+    transition:all 0.3s ease-in-out;
+    height:100%;
+    width:100%;
+    left:0;
+top:0;
+    background:rgba(0,0,0,0.5) url("../images/play.png") no-repeat center;
+    background-size: auto 50%;
+    opacity:0;
+    pointer-events:none;
+    content: '';
+    position: absolute;
+}
+.movie:hover {
+    height:200px;
+    margin:0 15px;
+    cursor: pointer;
+}
+.movie:hover::after {
+    opacity:1;
+}
+
+.car_:hover .controls {
+    opacity:1;
+}
+.controls {
+    opacity:0;
+    position: absolute;
+    height:100%;
+    width:50px;
+    background:rgba(0,0,0,0.7) no-repeat center;
+    background-size:60% auto;
+    top:0;
+    transition:all 0.2s ease-in-out;
+    z-index:10;
+}
+.controls.left {
+    left:0;
+    background-image:url("../images/left.png") !important;
+}
+.controls.right {
+    right:0;
+    background-image:url("../images/right.png") !important;
+}
+.controls:hover {
+    cursor: pointer;
+    background-color:rgba(0,0,0,0.8);
+}
+.controls.disabled {
+    pointer-events:none !important;
+}
