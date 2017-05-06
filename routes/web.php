@@ -35,11 +35,16 @@ Route::get('/profile', function () {
 Route::post('/review', function () {
     return view('review');
 });
+Route::post('profile','UsersController@getData');
+Route::post('updateData','UsersController@updateData');
 Route::post('review','MoviesController@index');
 Route::post('review','MoviesController@getData');
-Route::get('pruebasMovies',function(){
-  $movies = Movies::where('genre','accion')->get();
-    dd(movies);
+Route::post('myreviews','MoviesController@getMyReviews');
+Route::post('deleteReview','MoviesController@deleteReview');
+Route::get('getMovies',function(){
+    $movies = "";
+  $movies = DB::table('movies')->get();
+    return($movies);
 });
 Route::get('/insertMovie', function () {
     return view('insertMovie');
