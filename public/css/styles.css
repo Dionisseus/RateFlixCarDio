@@ -208,7 +208,7 @@ label[for='profilePic']:hover {
     #update {
         margin-top:0;
     }
-}
+} 
 @media (max-device-width:568px) {
     #profileImg {
         height: 200px;
